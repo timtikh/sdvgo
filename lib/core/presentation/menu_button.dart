@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MenuButton extends StatefulWidget {
-  const MenuButton({super.key, required this.text, this.speed = 4, required this.textColor, required this.borderColor});
+  const MenuButton({super.key, required this.text, this.speed = 4, required this.textColor, required this.borderColor, required this.route});
 
   final String text;
   final Color borderColor;
   final Color textColor;
   final int speed;
+  final String route;
 
   @override
   State<MenuButton> createState() => _MenuButtonState();
 }
 
-class _MenuButtonState extends State<MenuButton>  with SingleTickerProviderStateMixin {
+class _MenuButtonState extends State<MenuButton> with SingleTickerProviderStateMixin {
 
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -43,7 +44,7 @@ class _MenuButtonState extends State<MenuButton>  with SingleTickerProviderState
       builder: (context,_) => Align(
         alignment: Alignment(_animation.value * 2 - 1, 0),
         child: OutlinedButton(
-          onPressed: () {},
+          onPressed: () {Navigator.pushNamed(context, widget.route);},
           style: ButtonStyle(
             fixedSize: WidgetStateProperty.all(Size(200, 50)),
             side: WidgetStateProperty.all(

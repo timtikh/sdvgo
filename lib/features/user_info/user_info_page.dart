@@ -17,7 +17,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
   Widget build(BuildContext context) {
     return GradientBackground(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+          backgroundColor: Colors.transparent,
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             title: Padding(
@@ -31,6 +31,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Photo(),
                       Column(
@@ -40,17 +41,49 @@ class _UserInfoPageState extends State<UserInfoPage> {
                             userModel.name,
                             style: TextStyle(fontSize: 30),
                           ),
-                          Text(userModel.surname, style: TextStyle(fontSize: 30)),
+                          Text(userModel.surname,
+                              style: TextStyle(fontSize: 30)),
                         ],
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          print("deauth");
+                        },
+                        child: Text("Выйти"),
                       )
                     ],
                   ),
                 ),
-                MenuButton(text: "профиль", textColor: Colors.red, borderColor: Colors.black, speed: 1000,),
-                SizedBox(height: 20,),
-                MenuButton(text: "профиль", textColor: Colors.green, borderColor: Colors.pink, speed: 3000,),
-                SizedBox(height: 20,),
-                MenuButton(text: "профиль", textColor: Colors.yellow, borderColor: Colors.purple, speed: 2000,),
+                SizedBox(
+                  height: 20,
+                ),
+                MenuButton(
+                  text: "профиль",
+                  textColor: Colors.red,
+                  borderColor: Colors.black,
+                  speed: 1000,
+                  route: '/userinfo/achievments',
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                MenuButton(
+                  text: "профиль",
+                  textColor: Colors.green,
+                  borderColor: Colors.pink,
+                  speed: 3000,
+                  route: '/userinfo/achievments',
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                MenuButton(
+                  text: "профиль",
+                  textColor: Colors.yellow,
+                  borderColor: Colors.purple,
+                  speed: 2000,
+                  route: '/userinfo/achievments',
+                ),
               ],
             );
           })),
