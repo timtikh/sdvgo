@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
 class UserModel extends ChangeNotifier {
-  int _score = 0;
-  int _tiktokCount = 0;
-  String _name = 'Jane';
-  String _surname = 'Doe';
+  int _score;
+  int _tiktokCount;
+  String _name;
+  String _surname;
 
   int get score => _score;
   int get tiktokCount => _tiktokCount;
   String get name => _name;
   String get surname => _surname;
 
+  // Тоже не оч нравится этот блок
   void incrementScore() {
     _score++;
     notifyListeners();
@@ -42,10 +43,10 @@ class UserModel extends ChangeNotifier {
   }
 
   UserModel({
-    int score = 0,
-    int tiktokCount = 0,
-    String name = 'Jane',
-    String surname = 'Doe',
+    required int score,
+    required int tiktokCount,
+    required String name,
+    required String surname,
   })  : _score = score,
         _tiktokCount = tiktokCount,
         _name = name,
