@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           Expanded(
-            flex: 5,
+            flex: 8,
             child: UpperController()
           ),
           Expanded(
@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
             child: ControlBar(),
           ),
           Expanded(
-            flex: 5,
+            flex: 8,
             child: LowerController()
           ),
         ],
