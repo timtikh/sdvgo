@@ -5,6 +5,8 @@ import 'package:sdvgo/core/presentation/menu_button.dart';
 import 'package:sdvgo/features/user_info/presentation/photo.dart';
 import 'package:provider/provider.dart';
 
+import 'package:sdvgo/core/localizations/s.dart';
+
 class UserInfoPage extends StatefulWidget {
   const UserInfoPage({super.key});
 
@@ -51,7 +53,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                         ],
                       ),
                       MenuButton(
-                        text: "Выйти",
+                        text: S.of(context).exitButton,
                         textColor: Colors.red,
                         borderColor: Colors.red,
                         speed: 10000,

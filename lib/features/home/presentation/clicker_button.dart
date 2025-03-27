@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sdvgo/core/domain/user_model.dart';
 
+import 'package:sdvgo/core/localizations/s.dart';
+
 class ClickerButton extends StatefulWidget {
   const ClickerButton({super.key});
 
@@ -13,13 +15,13 @@ class _ClickerButtonState extends State<ClickerButton> {
   @override
   Widget build(BuildContext context) {
     final userModel = context.watch<UserModel>();
-    return  ElevatedButton(
+    return ElevatedButton(
       onPressed: () {
         setState(() {
           userModel.incrementScore();
         });
       },
-      child: Text('CLICK ${userModel.score}'),
+      child: Text('${S.of(context).click} ${userModel.score}'),
     );
   }
 }

@@ -4,12 +4,17 @@ import 'package:sdvgo/features/achievments/achievments_page.dart';
 import 'features/home/home_page.dart';
 import 'features/user_info/user_info_page.dart';
 
+import 'package:sdvgo/core/localizations/s.dart';
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      supportedLocales: S.supportedLocales,
+      localizationsDelegates: S.localizationDelegates,
+      locale: S.locale,
       title: 'SDVGO',
       initialRoute: '/',
       routes: {
