@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sdvgo/core/styles/theme.dart';
 
 class GradientBackground extends StatefulWidget {
   final Widget child;
@@ -18,7 +19,6 @@ class _GradientBackgroundState extends State<GradientBackground>
   late Animation<Alignment> _topAlignment;
   late Animation<Alignment> _bottomAlignment;
 
-  late TickerProvider fuck;
   @override
   void initState() {
     super.initState();
@@ -80,11 +80,11 @@ class _GradientBackgroundState extends State<GradientBackground>
               begin: _topAlignment.value,
               end: _bottomAlignment.value,
               colors: [
-                Colors.green,
-                Colors.yellow,
-                Colors.redAccent,
+                Theme.of(context).extension<GradientColors>()!.color1,
+                Theme.of(context).extension<GradientColors>()!.color2,
+                Theme.of(context).extension<GradientColors>()!.color3,
               ],
-              stops: [0.0, 0.3, 0.9],
+              stops: const [0.0, 0.3, 0.9],
             ),
           ),
           child: widget.child,

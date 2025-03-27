@@ -16,7 +16,9 @@ class ControlBar extends StatelessWidget {
             onPressed: () {},
             child: Text(S.of(context).exitButton),
           ),
-          ClickerButton(),
+          SizedBox(
+            width: 0,
+          ),
           ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, '/userinfo');

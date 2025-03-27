@@ -15,13 +15,22 @@ class _ClickerButtonState extends State<ClickerButton> {
   @override
   Widget build(BuildContext context) {
     final userModel = context.watch<UserModel>();
-    return ElevatedButton(
-      onPressed: () {
-        setState(() {
-          userModel.incrementScore();
-        });
-      },
-      child: Text('${S.of(context).click} ${userModel.score}'),
+    return SizedBox(
+      height: 100,
+      width: 100,
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(
+            backgroundColor: Colors.blue,
+            side: BorderSide(
+              color: Colors.blue,
+            )),
+        onPressed: () {
+          setState(() {
+            userModel.incrementScore();
+          });
+        },
+        child: Text('${S.of(context).click} ${userModel.score}'),
+      ),
     );
   }
 }
