@@ -2,20 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MenuButton extends StatefulWidget {
-  const MenuButton({super.key, required this.text, this.speed = 4, required this.textColor, required this.borderColor, required this.route});
+  const MenuButton(
+      {super.key,
+      required this.text,
+      this.speed = 4,
+      required this.textColor,
+      required this.borderColor,
+      required this.onTap,
+      this.bgcolor = Colors.transparent});
 
   final String text;
   final Color borderColor;
   final Color textColor;
   final int speed;
-  final String route;
+  final Color bgcolor;
+  final void Function() onTap;
 
   @override
   State<MenuButton> createState() => _MenuButtonState();
 }
 
-class _MenuButtonState extends State<MenuButton> with SingleTickerProviderStateMixin {
-
+class _MenuButtonState extends State<MenuButton>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
 
@@ -28,7 +36,7 @@ class _MenuButtonState extends State<MenuButton> with SingleTickerProviderStateM
       vsync: this,
     )..repeat(reverse: true);
 
-    _animation = Tween<double>(begin: 0, end: 1).animate(_controller);
+    _animation = Tween<double>(begin: -1, end: 1).animate(_controller);
   }
 
   @override
@@ -41,12 +49,13 @@ class _MenuButtonState extends State<MenuButton> with SingleTickerProviderStateM
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _animation,
-      builder: (context,_) => Align(
-        alignment: Alignment(_animation.value * 2 - 1, 0),
+      builder: (context, _) => Align(
+        alignment: Alignment(_animation.value, 0),
         child: OutlinedButton(
-          onPressed: () {Navigator.pushNamed(context, widget.route);},
+          onPressed: widget.onTap,
           style: ButtonStyle(
-            fixedSize: WidgetStateProperty.all(Size(200, 50)),
+            backgroundColor: WidgetStateProperty.all(widget.bgcolor),
+            // fixedSize: WidgetStateProperty.all(Size(200, 50)),
             side: WidgetStateProperty.all(
               BorderSide(color: widget.borderColor, width: 2.0),
             ),
@@ -56,20 +65,23 @@ class _MenuButtonState extends State<MenuButton> with SingleTickerProviderStateM
               ),
             ),
           ),
-          child: Text(
-            textAlign: TextAlign.center,
-            widget.text,
-            style: TextStyle(
-              fontFamily: "ComicSansMS",
-              color: widget.textColor,
-              fontSize: 30,
-              shadows: [
-                Shadow(
-                  color: Colors.black.withOpacity(0.2),
-                  blurRadius: 7,
-                  offset: Offset(6, 4),
-                ),
-              ],
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+            child: Text(
+              textAlign: TextAlign.center,
+              widget.text,
+              style: TextStyle(
+                fontFamily: "ChocoCooky",
+                color: widget.textColor,
+                fontSize: 30,
+                shadows: [
+                  Shadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: 7,
+                    offset: Offset(6, 4),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

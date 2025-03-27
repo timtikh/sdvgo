@@ -13,19 +13,24 @@ class UserInfoPage extends StatefulWidget {
 }
 
 class _UserInfoPageState extends State<UserInfoPage> {
+  void onMenuButtonTap() {
+    Navigator.pushNamed(context, "/userinfo/achievements");
+  }
+
   @override
   Widget build(BuildContext context) {
     return GradientBackground(
       child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
           backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            title: Padding(
-              padding: EdgeInsets.all(20),
-              child: Text("Настройки"),
-            ),
+          title: Padding(
+            padding: EdgeInsets.all(20),
+            child: Text("Настройки"),
           ),
-          body: Consumer<UserModel>(builder: (context, userModel, child) {
+        ),
+        body: Consumer<UserModel>(
+          builder: (context, userModel, child) {
             return Column(
               children: [
                 Padding(
@@ -45,12 +50,16 @@ class _UserInfoPageState extends State<UserInfoPage> {
                               style: TextStyle(fontSize: 30)),
                         ],
                       ),
-                      ElevatedButton(
-                        onPressed: () {
-                          print("deauth");
+                      MenuButton(
+                        text: "Выйти",
+                        textColor: Colors.red,
+                        borderColor: Colors.red,
+                        speed: 10000,
+                        onTap: () {
+                          Navigator.pop(context);
                         },
-                        child: Text("Выйти"),
-                      )
+                        bgcolor: Colors.black,
+                      ),
                     ],
                   ),
                 ),
@@ -58,35 +67,38 @@ class _UserInfoPageState extends State<UserInfoPage> {
                   height: 20,
                 ),
                 MenuButton(
-                  text: "профиль",
+                  text: "smthg",
                   textColor: Colors.red,
                   borderColor: Colors.black,
-                  speed: 1000,
-                  route: '/userinfo/achievments',
+                  speed: 1212,
+                  onTap: onMenuButtonTap,
+                  bgcolor: Colors.green,
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 MenuButton(
-                  text: "профиль",
+                  text: "самсунг",
                   textColor: Colors.green,
                   borderColor: Colors.pink,
-                  speed: 3000,
-                  route: '/userinfo/achievments',
+                  speed: 2923,
+                  onTap: onMenuButtonTap,
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 MenuButton(
-                  text: "профиль",
+                  text: "чекер",
                   textColor: Colors.yellow,
                   borderColor: Colors.purple,
-                  speed: 2000,
-                  route: '/userinfo/achievments',
+                  speed: 1697,
+                  onTap: onMenuButtonTap,
                 ),
               ],
             );
-          })),
+          },
+        ),
+      ),
     );
   }
 }

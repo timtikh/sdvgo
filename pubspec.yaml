@@ -58,10 +58,14 @@ dev_dependencies:
 flutter:
   assets:
     - assets/fonts/ComicSansMS.ttf
+    - assets/fonts/Chococooky.ttf
   fonts:
     - family: ComicSansMS
       fonts:
         - asset: assets/fonts/ComicSansMS.ttf
+    - family: ChocoCooky
+      fonts:
+        - asset: assets/fonts/Chococooky.ttf
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

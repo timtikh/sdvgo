@@ -23,7 +23,7 @@ class _GradientBackgroundState extends State<GradientBackground>
   void initState() {
     super.initState();
     _controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 100));
+        AnimationController(vsync: this, duration: const Duration(seconds: 5));
     _topAlignment = TweenSequence<Alignment>([
       TweenSequenceItem<Alignment>(
           tween: Tween<Alignment>(
@@ -79,8 +79,12 @@ class _GradientBackgroundState extends State<GradientBackground>
             gradient: LinearGradient(
               begin: _topAlignment.value,
               end: _bottomAlignment.value,
-              colors: [Colors.green, Colors.blue, Colors.lightBlue],
-              stops: [0.0, 0.6, 0.9],
+              colors: [
+                Colors.green,
+                Colors.yellow,
+                Colors.redAccent,
+              ],
+              stops: [0.0, 0.3, 0.9],
             ),
           ),
           child: widget.child,

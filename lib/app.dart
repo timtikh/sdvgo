@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sdvgo/features/achievments/achievments_page.dart';
 
-
 import 'features/home/home_page.dart';
 import 'features/user_info/user_info_page.dart';
 
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HomePage(),
         '/userinfo': (context) => UserInfoPage(),
-        '/userinfo/achievments': (context) => AchievmentsPage(),
+        '/userinfo/achievements': (context) => AchievmentsPage(),
       },
       // TODO: Перетащить тему в styles и в целом контроль темки там реализовывать
       theme: ThemeData(

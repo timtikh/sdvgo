@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:sdvgo/core/data/mock_user_model.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(create: (context) => mockUserModel, child: const MyApp()));
+  runApp(
+      ChangeNotifierProvider.value(value: mockUserModel, child: const MyApp()));
 }
-
-
