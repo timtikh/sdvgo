@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sdvgo/features/home/presentation/clicker_button.dart';
 
 import 'package:sdvgo/core/localizations/s.dart';
+import 'package:sdvgo/core/presentation/menu_button.dart';
 
 class ControlBar extends StatelessWidget {
   const ControlBar({super.key});
@@ -10,20 +10,39 @@ class ControlBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        // mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          ElevatedButton(
-            onPressed: () {},
-            child: Text(S.of(context).exitButton),
+          Expanded(
+            child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/userinfo');
+              },
+              child: Container(
+                height: 60, // Высота области нажатия
+                color: Colors.transparent, // Прозрачный фон (можно заменить)
+                child: Center(
+                  child: Text(S.of(context).hqdButton),
+                ),
+              ),
+            ),
           ),
           SizedBox(
-            width: 0,
+            width: 70,
           ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/userinfo');
-            },
-            child: Text(S.of(context).settingsButton),
+          // Второй InkWell
+          Expanded(
+            child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/userinfo');
+              },
+              child: Container(
+                height: 60, // Такая же высота, как у первой части
+                color: Colors.transparent, // Прозрачный фон (можно заменить)
+                child: Center(
+                  child: Text(S.of(context).settingsButton),
+                ),
+              ),
+            ),
           ),
         ],
       ),
