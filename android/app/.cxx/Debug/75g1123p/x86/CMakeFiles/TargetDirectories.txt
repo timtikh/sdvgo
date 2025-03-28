@@ -1,2 +1,0 @@
-/Users/moses/Documents/cs/flutter/sdvgo/android/app/.cxx/Debug/75g1123p/x86/CMakeFiles/edit_cache.dir
-/Users/moses/Documents/cs/flutter/sdvgo/android/app/.cxx/Debug/75g1123p/x86/CMakeFiles/rebuild_cache.dir
