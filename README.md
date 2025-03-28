@@ -53,7 +53,7 @@
    - Скачайте файл `google-services.json` из [настроек проекта Firebase](https://console.firebase.google.com/project/sdvgo-8f8e5/settings/general/android:com.sirius.yandex.sdvgo?hl=ru)
    - Поместите файл в каталог `android/app/`
 
-3. Настройка Firebase для iOS (если нужно):
+3. Настройка Firebase для iOS (если нужно, но у меня не заработало):
    - Скачайте файл `GoogleService-Info.plist` из настроек проекта Firebase
    - Поместите файл в каталог `ios/Runner/`
 
