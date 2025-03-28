@@ -16,14 +16,13 @@ class MyApp extends StatelessWidget {
       supportedLocales: S.supportedLocales,
       localizationsDelegates: S.localizationDelegates,
       locale: S.locale,
-      title: 'SDVGO',
+      title: "sdvgo",
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
         '/userinfo': (context) => UserInfoPage(),
         '/userinfo/achievements': (context) => AchievmentsPage(),
       },
-      // TODO: Перетащить тему в styles и в целом контроль темки там реализовывать
       theme: appTheme,
       // TODO: Routing через аус чек скрин - когда ауска будет сделана нужно сразу это переделать
     );

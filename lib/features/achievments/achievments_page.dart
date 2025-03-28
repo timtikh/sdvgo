@@ -22,7 +22,7 @@ class AchievmentsPage extends StatelessWidget {
         body: ListView(
           children: [
             AchievementProgress(
-              title: "Tiktoks",
+              title: S.of(context).tiktoksAchievement,
               icon: Icons.star,
               iconColor: Colors.amber,
               progressColor: Colors.green,
@@ -34,7 +34,7 @@ class AchievmentsPage extends StatelessWidget {
               height: 10,
             ),
             AchievementProgress(
-              title: "Clicks",
+              title: S.of(context).clicksAchievement,
               icon: Icons.heart_broken,
               iconColor: Colors.purple,
               progressColor: Colors.yellow,
@@ -46,7 +46,7 @@ class AchievmentsPage extends StatelessWidget {
               height: 10,
             ),
             AchievementProgress(
-              title: "gays",
+              title: S.of(context).templateWord,
               icon: Icons.flag,
               iconColor: Colors.blue,
               progressColor: Colors.red,

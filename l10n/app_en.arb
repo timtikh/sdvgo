@@ -18,5 +18,21 @@
   "hqdButton": "HQD",
   "@hqdButton": {
     "description": ""
+  },
+  "clicksAchievement": "Clicks",
+  "@clicksAchievement": {
+    "description": ""
+  },
+  "tiktoksAchievement": "Tiktoks",
+  "@tiktoksAchievement": {
+    "description": ""
+  },
+  "templateWord": "SomeWord!",
+  "@templateWord": {
+    "description": "word for tests"
+  },
+  "mainTitle": "SDVGO!",
+  "@mainTitle": {
+    "description": ""
   }
 }
