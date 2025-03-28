@@ -17,6 +17,7 @@ dependencies:
   provider: ^6.1.2
   animate_gradient: ^0.0.3
   google_fonts: ^6.2.1
+  camera: ^0.10.5
 
   flutter_localizations:
     sdk: flutter
