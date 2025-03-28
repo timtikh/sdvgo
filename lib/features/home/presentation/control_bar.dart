@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sdvgo/core/localizations/s.dart';
+import 'package:sdvgo/features/home/presentation/control_bar_button.dart';
 
 class ControlBar extends StatelessWidget {
   const ControlBar({super.key});
@@ -10,37 +11,20 @@ class ControlBar extends StatelessWidget {
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Expanded(
-            child: InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, '/userinfo');
-              },
-              child: Container(
-                height: 60, // Высота области нажатия
-                color: Colors.transparent, // Прозрачный фон (можно заменить)
-                child: Center(
-                  child: Text(S.of(context).hqdButton),
-                ),
-              ),
-            ),
+          ControlBarButton(
+            title: S.of(context).hqdButton,
+            onTap: () {
+              Navigator.pushNamed(context, '/userinfo');
+            },
           ),
           SizedBox(
-            width: 70,
+            width: 100,
           ),
-          // Второй InkWell
-          Expanded(
-            child: InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, '/userinfo');
-              },
-              child: Container(
-                height: 60, // Такая же высота, как у первой части
-                color: Colors.transparent, // Прозрачный фон (можно заменить)
-                child: Center(
-                  child: Text(S.of(context).settingsButton),
-                ),
-              ),
-            ),
+          ControlBarButton(
+            title: S.of(context).settingsButton,
+            onTap: () {
+              Navigator.pushNamed(context, '/userinfo');
+            },
           ),
         ],
       ),
