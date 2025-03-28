@@ -39,6 +39,7 @@ flutter:
   assets:
     - assets/fonts/ComicSansMS.ttf
     - assets/fonts/Chococooky.ttf
+    - assets/images/smiley_face.png
   fonts:
     - family: ComicSansMS
       fonts:

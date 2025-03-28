@@ -14,8 +14,7 @@ class _ClickerButtonState extends State<ClickerButton> {
   double _scale = 1.0;
   double _scaleIncrement = 0.1;
   Timer? _resetTimer;
-  final String _catImageUrl =
-      'https://i.pinimg.com/564x/32/f2/43/32f24381b05fcf53d8088c98963fe326.jpg';
+  final String _catImageUrl = 'assets/images/smiley_face.png';
 
   @override
   void dispose() {
@@ -63,43 +62,48 @@ class _ClickerButtonState extends State<ClickerButton> {
           child: Stack(
             children: [
               // Фон с котёнком
-              ClipRRect(
-                borderRadius: BorderRadius.circular(100),
-                child: Image.network(
-                  _catImageUrl,
-                  width: double.infinity,
-                  height: double.infinity,
-                  fit: BoxFit.cover,
-                  loadingBuilder: (context, child, loadingProgress) {
-                    if (loadingProgress == null) return child;
-                    return Container(color: Colors.grey[300]);
-                  },
-                  errorBuilder: (context, error, stackTrace) {
-                    return Container(color: Colors.grey[300]);
-                  },
-                ),
+              Image.asset(
+                _catImageUrl,
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.cover,
               ),
               // Текст поверх изображения
               Center(
                 child: OverflowBox(
                   maxWidth: double.infinity,
                   alignment: Alignment.center,
-                  child: Text(
-                    '${userModel.score}',
-                    style: const TextStyle(
-                      fontSize: 30,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                          blurRadius: 4,
-                          color: Colors.black,
-                          offset: Offset(0, 0),
+                  child: Stack(
+                    children: [
+                      Text(
+                        '${userModel.score}',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          foreground: Paint()
+                            ..style = PaintingStyle.stroke
+                            ..strokeWidth = 5
+                            ..color = Colors.black,
                         ),
-                      ],
-                    ),
-                    overflow: TextOverflow.visible,
-                    softWrap: false,
+                      ),
+                      Text(
+                        '${userModel.score}',
+                        style: const TextStyle(
+                          fontSize: 30,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          shadows: [
+                            Shadow(
+                              blurRadius: 4,
+                              color: Colors.black,
+                              offset: Offset(0, 0),
+                            ),
+                          ],
+                        ),
+                        overflow: TextOverflow.visible,
+                        softWrap: false,
+                      ),
+                    ],
                   ),
                 ),
               ),
