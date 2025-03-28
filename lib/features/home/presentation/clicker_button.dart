@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sdvgo/core/domain/user_model.dart';
-import 'package:sdvgo/core/localizations/s.dart';
 import 'dart:async';
 
 class ClickerButton extends StatefulWidget {
@@ -44,39 +43,44 @@ class _ClickerButtonState extends State<ClickerButton> {
       child: SizedBox(
         height: 140,
         width: 140,
-        child: Stack(
-          children: [
-            ClipRRect(
+        child: OutlinedButton(
+          style: OutlinedButton.styleFrom(
+            backgroundColor: Colors.transparent,
+            side: const BorderSide(color: Colors.transparent),
+            padding: EdgeInsets.zero,
+            shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100),
-              child: Image.network(
-                _catImageUrl,
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
-                loadingBuilder: (context, child, loadingProgress) {
-                  if (loadingProgress == null) return child;
-                  return Container(color: Colors.grey[300]);
-                },
-                errorBuilder: (context, error, stackTrace) {
-                  return Container(color: Colors.grey[300]);
-                },
-              ),
             ),
-            OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                backgroundColor: Colors.transparent,
-                side: const BorderSide(color: Colors.transparent),
-                padding: EdgeInsets.zero,
+          ),
+          onPressed: () {
+            setState(() {
+              userModel.incrementScore();
+              _scale += _scaleIncrement;
+              _scaleIncrement *= 0.9;
+              _startResetTimer();
+            });
+          },
+          child: Stack(
+            children: [
+              // Фон с котёнком
+              ClipRRect(
+                borderRadius: BorderRadius.circular(100),
+                child: Image.network(
+                  _catImageUrl,
+                  width: double.infinity,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return Container(color: Colors.grey[300]);
+                  },
+                  errorBuilder: (context, error, stackTrace) {
+                    return Container(color: Colors.grey[300]);
+                  },
+                ),
               ),
-              onPressed: () {
-                setState(() {
-                  userModel.incrementScore();
-                  _scale += _scaleIncrement;
-                  _scaleIncrement *= 0.9;
-                  _startResetTimer();
-                });
-              },
-              child: Center(
+              // Текст поверх изображения
+              Center(
                 child: OverflowBox(
                   maxWidth: double.infinity,
                   alignment: Alignment.center,
@@ -99,8 +103,8 @@ class _ClickerButtonState extends State<ClickerButton> {
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
