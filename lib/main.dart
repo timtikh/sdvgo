@@ -3,7 +3,7 @@ import 'package:sdvgo/app.dart';
 import 'package:provider/provider.dart';
 import 'package:sdvgo/core/data/mock_user_model.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:sdvgo/features/auth/domain/auth_service.dart';
+import 'package:sdvgo/features/auth/domain/auth_provider.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../domain/auth_service.dart';
+import '../../domain/auth_provider.dart';
 import '../widgets/animated_logo.dart';
 import '../widgets/animated_welcome_text.dart';
 import '../widgets/trash_background.dart';

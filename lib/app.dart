@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:sdvgo/features/auth/domain/auth_router.dart';
 import 'package:sdvgo/features/auth/presentation/pages/trash_login_page.dart';
 import 'core/data/mock_user_model.dart';
-import 'features/auth/domain/auth_service.dart';
+import 'features/auth/domain/auth_provider.dart';
 import 'features/home/home_page.dart';
 import 'features/user_info/user_info_page.dart';
 

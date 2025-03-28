@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../../domain/auth_service.dart';
+import '../../domain/auth_provider.dart';
 
 class LoginPage extends StatefulWidget {
   @override
