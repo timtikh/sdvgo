@@ -159,3 +159,14 @@ app.*.symbols
 .python-version
 .gclient_previous_custom_vars
 .gclient_previous_sync_commits
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+/android/app/google-services.json
+/android/gradle/
+
+lib/secrets.dart
+lib/firebase_options.dart
+/firebase.json
