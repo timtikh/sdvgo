@@ -14,5 +14,9 @@
   "achievementsTitle": "Achievements",
   "@achievementsTitle": {
     "description": ""
+  },
+  "hqdButton": "HQD",
+  "@hqdButton": {
+    "description": ""
   }
 }
