@@ -1,0 +1,18 @@
+{
+  "exitButton": "Выйти",
+  "@exitButton": {
+    "description": "Кнопка выхода"
+  },
+  "click": "Клик",
+  "@click": {
+    "description": "Клик"
+  },
+  "settingsButton": "Настройки",
+  "@settingsButton": {
+    "description": "Кнопка настроек на главном экране"
+  },
+  "achievementsTitle": "Ачивки",
+  "@achievementsTitle": {
+    "description": ""
+  }
+}

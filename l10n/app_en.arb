@@ -1,0 +1,18 @@
+{
+  "exitButton": "Exit",
+  "@exitButton": {
+    "description": "Exit button"
+  },
+  "click": "Click",
+  "@click": {
+    "description": "click button"
+  },
+  "settingsButton": "Settings",
+  "@settingsButton": {
+    "description": "Settings button"
+  },
+  "achievementsTitle": "Achievements",
+  "@achievementsTitle": {
+    "description": ""
+  }
+}

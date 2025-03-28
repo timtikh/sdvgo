@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sdvgo/features/home/presentation/clicker_button.dart';
 
+import 'package:sdvgo/core/localizations/s.dart';
+
 class ControlBar extends StatelessWidget {
   const ControlBar({super.key});
 
@@ -11,16 +13,17 @@ class ControlBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           ElevatedButton(
-            onPressed: () {
-            },
-            child: const Text('HQD'),
+            onPressed: () {},
+            child: Text(S.of(context).exitButton),
           ),
-          ClickerButton(),
+          SizedBox(
+            width: 0,
+          ),
           ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, '/userinfo');
             },
-            child: const Text('SETTINGS'),
+            child: Text(S.of(context).settingsButton),
           ),
         ],
       ),
