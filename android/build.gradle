@@ -16,3 +16,15 @@ subprojects {
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
+//
+//android {
+//    ndkVersion "25.1.8937393"
+//
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_17
+//        targetCompatibility JavaVersion.VERSION_17
+//    }
+//    kotlinOptions {
+//        jvmTarget = 17
+//    }
+//}

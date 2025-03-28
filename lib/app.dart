@@ -5,8 +5,13 @@ import 'package:sdvgo/features/auth/domain/auth_router.dart';
 import 'package:sdvgo/features/auth/presentation/pages/trash_login_page.dart';
 import 'core/data/mock_user_model.dart';
 import 'features/auth/domain/auth_provider.dart';
+import 'package:sdvgo/features/achievments/achievments_page.dart';
+
 import 'features/home/home_page.dart';
 import 'features/user_info/user_info_page.dart';
+
+import 'package:sdvgo/core/localizations/s.dart';
+import 'package:sdvgo/core/styles/theme.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -26,17 +31,17 @@ class MyApp extends StatelessWidget {
 
       child: MaterialApp(
         title: 'SDVGO',
+        supportedLocales: S.supportedLocales,
+        localizationsDelegates: S.localizationDelegates,
+        locale: S.locale,
         home: AuthRouter(),
         routes: {
           '/login': (context) => const TrashLoginPage(),
           '/home': (context) => const HomePage(),
           '/userinfo': (context) => const UserInfoPage(),
+          '/userinfo/achievements': (context) => AchievmentsPage(),
         },
-        // TODO: Перетащить тему в styles и в целом контроль темки там реализовывать
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
+        theme: appTheme,
       ),
     );;
   }
