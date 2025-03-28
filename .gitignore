@@ -48,3 +48,4 @@ app.*.map.json
 lib/secrets.dart
 lib/firebase_options.dart
 /firebase.json
+/android/gradle/
