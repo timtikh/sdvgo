@@ -28,7 +28,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
           backgroundColor: Colors.transparent,
           title: Padding(
             padding: EdgeInsets.all(20),
-            child: Text("Настройки"),
+            child: Text(S.of(context).settingsButton),
           ),
         ),
         body: Consumer<UserModel>(
@@ -69,7 +69,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                   height: 20,
                 ),
                 MenuButton(
-                  text: "smthg",
+                  text: S.of(context).achievementsTitle,
                   textColor: Colors.red,
                   borderColor: Colors.black,
                   speed: 1212,
@@ -80,7 +80,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                   height: 20,
                 ),
                 MenuButton(
-                  text: "самсунг",
+                  text: S.of(context).achievementsTitle,
                   textColor: Colors.green,
                   borderColor: Colors.pink,
                   speed: 2923,
@@ -90,7 +90,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                   height: 20,
                 ),
                 MenuButton(
-                  text: "чекер",
+                  text: S.of(context).achievementsTitle,
                   textColor: Colors.yellow,
                   borderColor: Colors.purple,
                   speed: 1697,

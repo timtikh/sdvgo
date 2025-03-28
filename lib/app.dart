@@ -43,6 +43,6 @@ class MyApp extends StatelessWidget {
         },
         theme: appTheme,
       ),
-    );;
+    );
   }
 }
