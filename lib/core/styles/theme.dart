@@ -38,6 +38,13 @@ class GradientColors extends ThemeExtension<GradientColors> {
 }
 
 ThemeData appTheme = ThemeData(
+  pageTransitionsTheme: const PageTransitionsTheme(
+    builders: <TargetPlatform, PageTransitionsBuilder>{
+      TargetPlatform.android: ZoomPageTransitionsBuilder(
+        allowEnterRouteSnapshotting: false,
+      ),
+    },
+  ),
   fontFamily: 'Chococooky',
   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
   useMaterial3: true,
