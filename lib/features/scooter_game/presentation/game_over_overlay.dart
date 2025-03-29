@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:sdvgo/features/scooter_game/presentation/scooter_game_widget.dart';
 
 class GameOver extends StatelessWidget {
-  // Reference to parent game.
   final ScooterGame game;
+
   const GameOver({required this.game, super.key});
+
+  void restartingGame() async {
+    await game.reloadGame();
+    game.overlays.remove('GameOver');
+    game.resumeEngine();
+  }
 
   @override
   Widget build(BuildContext context) {
-    const blackTextColor = Color.fromRGBO(0, 0, 0, 1.0);
-    const whiteTextColor = Color.fromRGBO(255, 255, 255, 1.0);
+    const blackTextColor = Colors.black;
+    const whiteTextColor = Colors.white;
 
     return Material(
       color: Colors.transparent,
@@ -27,22 +33,19 @@ class GameOver extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'Game Over',
+              Text(
+                'Game Over\nYour score: ${game.points}',
                 style: TextStyle(
                   color: whiteTextColor,
                   fontSize: 24,
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
               SizedBox(
                 width: 200,
                 height: 75,
                 child: ElevatedButton(
-                  onPressed: () {
-                    // game.reset();
-                    game.overlays.remove('GameOver');
-                  },
+                  onPressed: restartingGame,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: whiteTextColor,
                   ),

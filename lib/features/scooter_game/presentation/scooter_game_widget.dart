@@ -32,6 +32,7 @@ class ScooterGame extends FlameGame with PanDetector, HasCollisionDetection {
 
   late Player player;
   final stripes = List.generate(GameConfig.roadLinesCounter, (i) => i);
+  int points = 0;
 
   @override
   Future<void> onLoad() async {
@@ -63,7 +64,7 @@ class ScooterGame extends FlameGame with PanDetector, HasCollisionDetection {
         return [
           Enemy(
             pedLine: shuffledStripes[0],
-            addClicks: addClicks,
+            addClicks: addPoints,
           ),
           if (makeTwo)
             Enemy(
@@ -95,5 +96,16 @@ class ScooterGame extends FlameGame with PanDetector, HasCollisionDetection {
       final isUpEvent = delta > 0;
       player.move(isMoveUp: isUpEvent);
     }
+  }
+
+  Future<void> reloadGame() async {
+    removeAll(children);
+    points = 0;
+    await onLoad();
+  }
+
+  void addPoints() {
+    points++;
+    addClicks();
   }
 }

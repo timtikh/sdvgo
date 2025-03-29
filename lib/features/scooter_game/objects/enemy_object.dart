@@ -42,6 +42,9 @@ class Enemy extends SpriteComponent
 
     if (position.x < -roadStripeHeight) {
       removeFromParent();
+      if (gameRef.overlays.isActive('GameOver')) {
+        return;
+      }
       addClicks?.call();
     }
   }

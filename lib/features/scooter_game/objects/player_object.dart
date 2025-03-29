@@ -40,9 +40,11 @@ class Player extends SpriteComponent
   void onCollisionStart(
       Set<Vector2> intersectionPoints, PositionComponent other) {
     super.onCollisionStart(intersectionPoints, other);
+    if (gameRef.overlays.isActive('GameOver')) {
+      return;
+    }
 
-    print('pizdec');
-
-    // TODO: end game method
+    gameRef.pauseEngine();
+    gameRef.overlays.add('GameOver');
   }
 }
