@@ -1,10 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:sdvgo/core/di/app_scope.dart';
-import 'package:sdvgo/core/domain/user_cubit.dart';
 import 'dart:async';
 
-import 'package:yx_scope_flutter/yx_scope_flutter.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sdvgo/core/di/app_scope.dart';
+import 'package:sdvgo/core/domain/user_cubit.dart';
+import 'package:sdvgo/features/home/presentation/overflowed_text.dart';
+import 'package:yx_scope_flutter/yx_scope_flutter.dart';
 
 import '../../../core/domain/user.dart';
 
@@ -68,53 +69,16 @@ class _ClickerButtonState extends State<ClickerButton> {
             },
             child: Stack(
               children: [
-                // Фон с котёнком
                 Image.asset(
                   _catImageUrl,
                   width: double.infinity,
                   height: double.infinity,
                   fit: BoxFit.cover,
                 ),
-                // Текст поверх изображения
                 BlocBuilder<UserCubit, User>(
                   bloc: userCubit,
                   builder: (context, state) => Center(
-                    child: OverflowBox(
-                      maxWidth: double.infinity,
-                      alignment: Alignment.center,
-                      child: Stack(
-                        children: [
-                          Text(
-                            '${state.score}',
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              foreground: Paint()
-                                ..style = PaintingStyle.stroke
-                                ..strokeWidth = 5
-                                ..color = Colors.black,
-                            ),
-                          ),
-                          Text(
-                            '${state.score}',
-                            style: const TextStyle(
-                              fontSize: 30,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              shadows: [
-                                Shadow(
-                                  blurRadius: 4,
-                                  color: Colors.black,
-                                  offset: Offset(0, 0),
-                                ),
-                              ],
-                            ),
-                            overflow: TextOverflow.visible,
-                            softWrap: false,
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: OverflowedText(number: state.score),
                   ),
                 ),
               ],
