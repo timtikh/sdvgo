@@ -7,6 +7,8 @@ import 'package:provider/provider.dart';
 
 import 'package:sdvgo/core/localizations/s.dart';
 
+import '../auth/domain/auth_provider.dart';
+
 class UserInfoPage extends StatefulWidget {
   const UserInfoPage({super.key});
 
@@ -15,12 +17,15 @@ class UserInfoPage extends StatefulWidget {
 }
 
 class _UserInfoPageState extends State<UserInfoPage> {
+
   void onMenuButtonTap() {
     Navigator.pushNamed(context, "/userinfo/achievements");
   }
 
   @override
   Widget build(BuildContext context) {
+    final authService = Provider.of<AuthenticationProvider>(context);
+
     return GradientBackground(
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -57,8 +62,9 @@ class _UserInfoPageState extends State<UserInfoPage> {
                         textColor: Colors.red,
                         borderColor: Colors.red,
                         speed: 10000,
-                        onTap: () {
-                          Navigator.pop(context);
+                        onTap: () async {
+                          await authService.signOut();
+                          Navigator.pushNamed(context, '/login');
                         },
                         bgcolor: Colors.black,
                       ),
