@@ -1,6 +1,7 @@
-import 'package:sdvgo/core/domain/user_info_cubit.dart';
 import 'package:sdvgo/core/domain/user_statistics_cubit.dart';
 import 'package:sdvgo/features/auth/data/auth_repository_impl.dart';
+import 'package:sdvgo/features/auth/domain/cubits/auth_cubit.dart';
+import 'package:sdvgo/features/auth/domain/repositories/auth_repository.dart';
 import 'package:yx_scope/yx_scope.dart';
 
 class AppScopeContainer extends ScopeContainer {
@@ -8,9 +9,11 @@ class AppScopeContainer extends ScopeContainer {
   late final userStatisticsCubitDep = dep(() => UserStatisticsCubit(
       clicksCount: 0, tiktokCount: 0, puffs: 0, gamePoints: 0));
 
-  late final authRepositoryDep = dep(() => AuthRepositoryImpl());
+  late final authRepositoryDep =
+      dep<AuthRepository>(() => AuthRepositoryImpl());
 
-  late final userInfoCubitDep = dep(() => UserInfoCubit(uid: '', email: ''));
+  late final authCubitDep =
+      dep(() => AuthCubit(authRepository: authRepositoryDep.get));
 }
 
 class AppScopeHolder extends ScopeHolder<AppScopeContainer> {
