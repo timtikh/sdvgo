@@ -44,10 +44,17 @@
 - [Статья про архитектуру](https://habr.com/ru/articles/733960/)
 
 ## Firebase настройка
-// TODO: БЛОК ПРО SHA-1
+
 ### Если вы сами поднимаете проект - то пропустите первый пункт и создайте проект в CloudConsole)
 
-1. Получите доступ к проекту Firebase от @timtikh
+0. Получите доступ к проекту Firebase от @timtikh (администратор проекта)
+
+1. Сгенерируйте Ключ подписания SHA-1 и передайте его в Project Settings или администратору проекта:
+
+   ```bash
+   keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+   
+   ```
 
 2. Настройка Firebase для Android:
    - Скачайте файл `google-services.json` из [настроек проекта Firebase](https://console.firebase.google.com/project/sdvgo-8f8e5/settings/general/android:com.sirius.yandex.sdvgo?hl=ru)
