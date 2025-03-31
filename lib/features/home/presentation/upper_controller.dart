@@ -13,9 +13,17 @@ class UpperController extends StatefulWidget {
 
 class _UpperControllerState extends State<UpperController> {
   List<Widget> children = List.generate(4, (i) {
-    return ColoredBox(
-      color: Colors.pink.shade100,
-      child: Center(child: Text('$i')),
+    return PageView(
+      scrollDirection: Axis.vertical,
+      children: List.generate(
+        4,
+        (ii) => ColoredBox(
+          color: Colors.black38,
+          child: Center(
+            child: Text('${i * 4 + ii}'),
+          ),
+        ),
+      ),
     );
   });
 
