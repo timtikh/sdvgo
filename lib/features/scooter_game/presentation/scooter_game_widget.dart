@@ -31,6 +31,7 @@ class ScooterGame extends FlameGame with PanDetector, HasCollisionDetection {
   final VoidCallback addClicks;
 
   late Player player;
+  /// Number of stripes in game
   final stripes = List.generate(GameConfig.roadLinesCounter, (i) => i);
   int points = 0;
 
@@ -55,8 +56,10 @@ class ScooterGame extends FlameGame with PanDetector, HasCollisionDetection {
     // Adding enemies
     add(SpawnComponent.periodRange(
       multiFactory: (amount) {
+        // Calculating 1 or 2 enemies will be on screen
         final makeTwo = Random().nextBool();
 
+        // Generating on which line enemy occur
         final shuffledStripes = [...stripes]
           ..shuffle()
           ..take(2);
@@ -73,12 +76,14 @@ class ScooterGame extends FlameGame with PanDetector, HasCollisionDetection {
         ];
       },
       selfPositioning: true,
+      // Setting delta time of spawning enemies
       maxPeriod: 2.5,
       minPeriod: 1.5,
     ));
   }
 
   late Vector2 _startPosition;
+  /// Value of how much user should swipe (in pixels) for triggering handler
   static const _swipeThreshold = 30.0;
 
   @override
@@ -107,5 +112,11 @@ class ScooterGame extends FlameGame with PanDetector, HasCollisionDetection {
   void addPoints() {
     points++;
     addClicks();
+  }
+
+  void restartingGame() async {
+    await reloadGame();
+    overlays.remove('GameOver');
+    resumeEngine();
   }
 }

@@ -10,19 +10,25 @@ class Enemy extends SpriteComponent
     with HasGameRef<ScooterGame>, RoadStripeHeight<ScooterGame> {
   Enemy({required this.pedLine, this.addClicks});
 
+  /// Number of line where enemy occurred
   final int pedLine;
+
+  /// Callback for getting points
   final void Function()? addClicks;
 
   @override
   Future<void> onLoad() async {
     await super.onLoad();
+    // Setting size of enemy as 0.75 as height of stripe
     final enemySize = Vector2.all(roadStripeHeight * 0.75);
     size = enemySize;
 
+    // Selecting random asset for enemy
     final enemySprite = GameConfig
         .enemySprites[Random().nextInt(GameConfig.enemySprites.length)];
     sprite = await gameRef.loadSprite(enemySprite);
 
+    // Calculating position for enemy (with padding from bottom of stripe)
     final enemyBottomPadding = (roadStripeHeight - enemySize.x) / 2;
     final enemyYPosition = roadStripeHeight * pedLine + enemyBottomPadding;
     position = Vector2(gameRef.size.x + enemySize.x, enemyYPosition);
@@ -40,8 +46,10 @@ class Enemy extends SpriteComponent
 
     position.x -= dt * 250;
 
+    // Check if enemy is out of screen (user not collided with enemy)
     if (position.x < -roadStripeHeight) {
       removeFromParent();
+      // Ignore adding points if game is paused
       if (gameRef.overlays.isActive('GameOver')) {
         return;
       }

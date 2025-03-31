@@ -6,12 +6,6 @@ class GameOver extends StatelessWidget {
 
   const GameOver({required this.game, super.key});
 
-  void restartingGame() async {
-    await game.reloadGame();
-    game.overlays.remove('GameOver');
-    game.resumeEngine();
-  }
-
   @override
   Widget build(BuildContext context) {
     const blackTextColor = Colors.black;
@@ -45,7 +39,7 @@ class GameOver extends StatelessWidget {
                 width: 200,
                 height: 75,
                 child: ElevatedButton(
-                  onPressed: restartingGame,
+                  onPressed: game.restartingGame,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: whiteTextColor,
                   ),
