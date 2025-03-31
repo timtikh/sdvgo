@@ -39,36 +39,31 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return ScopeProvider(
       holder: _appScopeHolder,
-      child: ScopeBuilder<AppScopeContainer>.withPlaceholder(
-        builder: (context, appScope) {
-          return MultiProvider(
-            providers: [
-              Provider<AuthenticationProvider>.value(
-                value: AuthenticationProvider(FirebaseAuth.instance),
-              ),
-              StreamProvider(
-                create: (context) =>
-                    context.read<AuthenticationProvider>().authState,
-                initialData: null,
-              ),
-            ],
-            child: MaterialApp(
-              title: 'SDVGO',
-              supportedLocales: S.supportedLocales,
-              localizationsDelegates: S.localizationDelegates,
-              locale: S.locale,
-              home: AuthRouter(),
-              routes: {
-                '/login': (context) => const TrashLoginPage(),
-                '/home': (context) => const HomePage(),
-                '/userinfo': (context) => const UserInfoPage(),
-                '/userinfo/achievements': (context) => AchievmentsPage(),
-              },
-              theme: appTheme,
-            ),
-          );
-        },
-        placeholder: const Center(child: CircularProgressIndicator()),
+      child: MultiProvider(
+        providers: [
+          Provider<AuthenticationProvider>.value(
+            value: AuthenticationProvider(FirebaseAuth.instance),
+          ),
+          StreamProvider(
+            create: (context) =>
+                context.read<AuthenticationProvider>().authState,
+            initialData: null,
+          ),
+        ],
+        child: MaterialApp(
+          title: 'SDVGO',
+          supportedLocales: S.supportedLocales,
+          localizationsDelegates: S.localizationDelegates,
+          locale: S.locale,
+          home: AuthRouter(),
+          routes: {
+            '/login': (context) => const TrashLoginPage(),
+            '/home': (context) => const HomePage(),
+            '/userinfo': (context) => const UserInfoPage(),
+            '/userinfo/achievements': (context) => AchievmentsPage(),
+          },
+          theme: appTheme,
+        ),
       ),
     );
   }

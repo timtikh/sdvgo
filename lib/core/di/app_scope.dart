@@ -1,12 +1,6 @@
 import 'package:sdvgo/core/domain/user_cubit.dart';
 import 'package:yx_scope/yx_scope.dart';
 
-void main() async {
-  final appScopeHolder = AppScopeHolder();
-
-  await appScopeHolder.create();
-}
-
 class AppScopeContainer extends ScopeContainer {
   late final userCubitDep = dep(() =>
       UserCubit(score: 0, tiktokCount: 0, name: 'name', surname: 'surname'));
