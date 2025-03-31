@@ -95,9 +95,9 @@ class ScooterGame extends FlameGame with PanDetector, HasCollisionDetection {
   void onPanEnd(DragEndInfo info) {
     final delta = info.raw.globalPosition.dy - _startPosition.y;
 
-    // Check if user swipes enough
-    if (delta.abs() > _swipeThreshold) {
-      // Check if swipe was horizontal or vertical
+    final isSwipe = delta.abs() > _swipeThreshold;
+    if (isSwipe) {
+      // Check if swipe up or down
       final isUpEvent = delta > 0;
       player.move(isMoveUp: isUpEvent);
     }
