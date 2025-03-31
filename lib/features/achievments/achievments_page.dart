@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sdvgo/core/di/app_scope.dart';
+import 'package:sdvgo/core/domain/user_statistics.dart';
+import 'package:sdvgo/core/domain/user_statistics_cubit.dart';
+import 'package:sdvgo/core/localizations/s.dart';
 import 'package:sdvgo/core/presentation/gradient_background.dart';
 import 'package:sdvgo/features/achievments/presentation/achievment_progress.dart';
-import 'package:sdvgo/core/localizations/s.dart';
-import 'package:sdvgo/core/di/app_scope.dart';
-import 'package:sdvgo/core/domain/user_cubit.dart';
-
 import 'package:yx_scope_flutter/yx_scope_flutter.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../core/domain/user.dart';
 
 class AchievmentsPage extends StatelessWidget {
   const AchievmentsPage({super.key});
@@ -16,8 +15,7 @@ class AchievmentsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScopeBuilder<AppScopeContainer>.withPlaceholder(
       builder: (context, scope) {
-        final userCubit = scope.userCubitDep.get;
-
+        final userStatisticsCubit = scope.userStatisticsCubitDep.get;
         return GradientBackground(
           child: Scaffold(
             backgroundColor: Colors.transparent,
@@ -25,8 +23,8 @@ class AchievmentsPage extends StatelessWidget {
               title: Text(S.of(context).achievementsTitle),
               backgroundColor: Colors.transparent,
             ),
-            body: BlocBuilder<UserCubit, User>(
-              bloc: userCubit,
+            body: BlocBuilder<UserStatisticsCubit, UserStatistics>(
+              bloc: userStatisticsCubit,
               builder: (context, state) => ListView(
                 children: [
                   AchievementProgress(
@@ -46,7 +44,7 @@ class AchievmentsPage extends StatelessWidget {
                     icon: Icons.heart_broken,
                     iconColor: Colors.purple,
                     progressColor: Colors.yellow,
-                    current: state.score,
+                    current: state.clicksCount,
                     total: 1000,
                     height: 100,
                   ),

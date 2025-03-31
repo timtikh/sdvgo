@@ -1,34 +1,15 @@
 // auth_provider.dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:flutter/foundation.dart';
 
 class AuthenticationProvider {
   final FirebaseAuth firebaseAuth;
   //FirebaseAuth instance
   AuthenticationProvider(this.firebaseAuth);
 
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
-
+  final _googleSignIn = GoogleSignIn();
   User? get user => firebaseAuth.currentUser;
   Stream<User?> get authState => firebaseAuth.idTokenChanges();
-
-
-  Future<void> signInWithEmailAndPassword(String email, String password) async {
-    try {
-      await firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
-    } on FirebaseException catch (e) {
-      throw Exception('${e.message}');
-    }
-  }
-
-  Future<void> registerWithEmailAndPassword(String email, String password) async {
-    try {
-      await firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
-    } on FirebaseException catch (e) {
-      throw Exception('${e.message}');
-    }
-  }
 
   Future<void> signInWithGoogle() async {
     try {
@@ -45,7 +26,8 @@ class AuthenticationProvider {
       }
 
       // Get the auth details
-      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
       if (googleAuth.accessToken == null || googleAuth.idToken == null) {
         throw Exception('Failed to get Google auth tokens');
       }
@@ -59,7 +41,8 @@ class AuthenticationProvider {
       // Sign in to Firebase with the credential
       await firebaseAuth.signInWithCredential(credential);
     } on FirebaseException catch (e) {
-      throw Exception('Firebase error: ${e.message ?? 'Unknown Firebase error'}');
+      throw Exception(
+          'Firebase error: ${e.message ?? 'Unknown Firebase error'}');
     } on Exception catch (e) {
       throw Exception('Error signing in with Google: ${e.toString()}');
     }

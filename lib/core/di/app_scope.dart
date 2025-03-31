@@ -1,9 +1,16 @@
-import 'package:sdvgo/core/domain/user_cubit.dart';
+import 'package:sdvgo/core/domain/user_info_cubit.dart';
+import 'package:sdvgo/core/domain/user_statistics_cubit.dart';
+import 'package:sdvgo/features/auth/data/auth_repository_impl.dart';
 import 'package:yx_scope/yx_scope.dart';
 
 class AppScopeContainer extends ScopeContainer {
-  late final userCubitDep = dep(() =>
-      UserCubit(score: 0, tiktokCount: 0, name: 'name', surname: 'surname'));
+  // TODO: надо чето сделать с тем что я нулями просто инициализирую значения
+  late final userStatisticsCubitDep = dep(() => UserStatisticsCubit(
+      clicksCount: 0, tiktokCount: 0, puffs: 0, gamePoints: 0));
+
+  late final authRepositoryDep = dep(() => AuthRepositoryImpl());
+
+  late final userInfoCubitDep = dep(() => UserInfoCubit(uid: '', email: ''));
 }
 
 class AppScopeHolder extends ScopeHolder<AppScopeContainer> {

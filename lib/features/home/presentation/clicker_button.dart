@@ -3,11 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sdvgo/core/di/app_scope.dart';
-import 'package:sdvgo/core/domain/user_cubit.dart';
+import 'package:sdvgo/core/domain/user_statistics.dart';
+import 'package:sdvgo/core/domain/user_statistics_cubit.dart';
 import 'package:sdvgo/features/home/presentation/overflowed_text.dart';
 import 'package:yx_scope_flutter/yx_scope_flutter.dart';
-
-import '../../../core/domain/user.dart';
 
 class ClickerButton extends StatefulWidget {
   const ClickerButton({super.key});
@@ -42,7 +41,7 @@ class _ClickerButtonState extends State<ClickerButton> {
   Widget build(BuildContext context) {
     return ScopeBuilder<AppScopeContainer>.withPlaceholder(
         builder: (context, scope) {
-      final userCubit = scope.userCubitDep.get;
+      final userStatisticsCubit = scope.userStatisticsCubitDep.get;
 
       return AnimatedScale(
         scale: _scale,
@@ -60,7 +59,7 @@ class _ClickerButtonState extends State<ClickerButton> {
               ),
             ),
             onPressed: () {
-              userCubit.incrementScore();
+              userStatisticsCubit.increaseClicksCountByValue(1);
               setState(() {
                 _scale += _scaleIncrement;
                 _scaleIncrement *= 0.9;
@@ -75,10 +74,10 @@ class _ClickerButtonState extends State<ClickerButton> {
                   height: double.infinity,
                   fit: BoxFit.cover,
                 ),
-                BlocBuilder<UserCubit, User>(
-                  bloc: userCubit,
+                BlocBuilder<UserStatisticsCubit, UserStatistics>(
+                  bloc: userStatisticsCubit,
                   builder: (context, state) => Center(
-                    child: OverflowedText(number: state.score),
+                    child: OverflowedText(number: state.clicksCount),
                   ),
                 ),
               ],

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sdvgo/core/di/app_scope.dart';
-import 'package:sdvgo/core/domain/user_cubit.dart';
+import 'package:sdvgo/core/domain/user_statistics.dart';
+import 'package:sdvgo/core/domain/user_statistics_cubit.dart';
 import 'package:sdvgo/core/localizations/s.dart';
 import 'package:sdvgo/core/presentation/gradient_background.dart';
 import 'package:sdvgo/core/presentation/menu_button.dart';
 import 'package:sdvgo/features/user_info/presentation/photo.dart';
 import 'package:yx_scope_flutter/yx_scope_flutter.dart';
-
-import '../../../core/domain/user.dart';
 
 class UserInfoPage extends StatefulWidget {
   const UserInfoPage({super.key});
@@ -26,7 +25,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
   Widget build(BuildContext context) {
     return ScopeBuilder<AppScopeContainer>.withPlaceholder(
       builder: (context, scope) {
-        final userCubit = scope.userCubitDep.get;
+        final userCubit = scope.userStatisticsCubitDep.get;
 
         return GradientBackground(
           child: Scaffold(
@@ -38,7 +37,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                 child: Text(S.of(context).settingsButton),
               ),
             ),
-            body: BlocBuilder<UserCubit, User>(
+            body: BlocBuilder<UserStatisticsCubit, UserStatistics>(
               bloc: userCubit,
               builder: (context, state) {
                 return Column(
@@ -53,10 +52,10 @@ class _UserInfoPageState extends State<UserInfoPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                state.name,
+                                '${state.clicksCount}',
                                 style: TextStyle(fontSize: 30),
                               ),
-                              Text(state.surname,
+                              Text('${state.tiktokCount}',
                                   style: TextStyle(fontSize: 30)),
                             ],
                           ),
