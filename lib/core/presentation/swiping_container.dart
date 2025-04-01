@@ -34,7 +34,7 @@ class _SwipingContainerState extends State<SwipingContainer> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      child: widget.children[currentWidgetIndex],
+      behavior: HitTestBehavior.opaque,
       onHorizontalDragStart: (details) {
         startPosition = details.globalPosition;
       },
@@ -42,6 +42,7 @@ class _SwipingContainerState extends State<SwipingContainer> {
         final delta = details.globalPosition - startPosition;
         handleSwipe(delta);
       },
+      child: widget.children[currentWidgetIndex],
     );
   }
 }
