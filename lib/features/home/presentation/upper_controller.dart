@@ -13,6 +13,8 @@ class UpperController extends StatefulWidget {
 class _UpperControllerState extends State<UpperController> {
   @override
   Widget build(BuildContext context) {
-    return Container(color:Colors.pink.shade100,);
+    return Container(
+      color: Colors.pink.shade100,
+    );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sdvgo/core/presentation/gradient_background.dart';
+import 'package:sdvgo/features/home/presentation/clicker_button.dart';
 import 'package:sdvgo/features/home/presentation/lower_controller.dart';
 import 'package:sdvgo/features/home/presentation/upper_controller.dart';
-import 'package:sdvgo/features/home/presentation/clicker_button.dart';
-import 'package:sdvgo/core/presentation/gradient_background.dart';
 
 import 'presentation/control_bar.dart';
 
