@@ -16,23 +16,25 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return GradientBackground(
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body:
-            Stack(alignment: Alignment.center, fit: StackFit.loose, children: [
-          Column(
-            children: [
-              Expanded(flex: 8, child: UpperController()),
-              Expanded(
-                flex: 1,
-                child: ControlBar(),
-              ),
-              Expanded(flex: 8, child: LowerController()),
-            ],
-          ),
-          ClickerButton(),
-        ]),
+    return SafeArea(
+      child: GradientBackground(
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body:
+              Stack(alignment: Alignment.center, fit: StackFit.loose, children: [
+            Column(
+              children: [
+                Expanded(flex: 8, child: UpperController()),
+                Expanded(
+                  flex: 1,
+                  child: ControlBar(),
+                ),
+                Expanded(flex: 8, child: LowerController()),
+              ],
+            ),
+            ClickerButton(),
+          ]),
+        ),
       ),
     );
   }
