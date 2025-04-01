@@ -27,8 +27,9 @@ class _UpperControllerState extends State<UpperController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocProvider(
+    return Container(
+      color: Colors.green.shade100,
+      child: BlocProvider(
         create: (_) => TikTokCubit(_repository),
         child: const TikTokScreen(),
       ),
