@@ -9,8 +9,6 @@ import 'package:sdvgo/core/presentation/menu_button.dart';
 import 'package:sdvgo/features/user_info/presentation/photo.dart';
 import 'package:yx_scope_flutter/yx_scope_flutter.dart';
 
-import '../auth/domain/auth_provider.dart';
-
 class UserInfoPage extends StatefulWidget {
   const UserInfoPage({super.key});
 
@@ -19,7 +17,6 @@ class UserInfoPage extends StatefulWidget {
 }
 
 class _UserInfoPageState extends State<UserInfoPage> {
-
   void onMenuButtonTap() {
     Navigator.pushNamed(context, "/userinfo/achievements");
   }

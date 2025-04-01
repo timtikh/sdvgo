@@ -10,6 +10,7 @@ class MenuButton extends StatelessWidget {
   final int? speed;
   final Color bgcolor;
   final VoidCallback? onTap;
+  final int fontSize;
 
   const MenuButton({
     super.key,
@@ -19,6 +20,7 @@ class MenuButton extends StatelessWidget {
     required this.borderColor,
     required this.onTap,
     this.bgcolor = Colors.transparent,
+    this.fontSize = 30,
   });
 
   @override
@@ -29,7 +31,7 @@ class MenuButton extends StatelessWidget {
       style: TextStyle(
         fontFamily: "ChocoCooky",
         color: textColor,
-        fontSize: 30,
+        fontSize: fontSize.toDouble(),
         shadows: [
           Shadow(
             color: Colors.black.withOpacity(0.2),
