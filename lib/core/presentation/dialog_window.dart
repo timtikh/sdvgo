@@ -41,6 +41,7 @@ class DialogWindow extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
+                textAlign: TextAlign.center,
                 dialogText,
                 style: TextStyle(
                   color: dialogTextColor,

@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:sdvgo/core/presentation/dialog_window.dart';
 import 'package:sdvgo/core/presentation/menu_button.dart';
 
 class GoogleSignInRoulette extends StatefulWidget {
@@ -162,28 +163,41 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette>
 
   void _showNoLuckDialog() {
     showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        backgroundColor: Colors.black,
-        title: Text(
-          // todo: add locales
-          'Чел, тебе не повезло, минус вайб(',
-          style: TextStyle(color: Colors.white),
-        ),
-        content: Text(
-          // todo: add locales
-
-          'Попробуй еще раз!',
-          style: TextStyle(color: Colors.white),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text('OK', style: TextStyle(color: Colors.purple)),
-          ),
-        ],
-      ),
-    );
+        context: context,
+        builder: (context) => DialogWindow(
+              dialogText: 'Чел, тебе не повезло, минус вайб(',
+              buttonText: 'OK',
+              buttonOnTap: () {
+                Navigator.pop(context);
+              },
+              borderColor: Colors.green,
+              bgColor: Colors.yellow,
+              dialogTextColor: Colors.red,
+              buttonBgColor: Colors.redAccent,
+              buttonTextColor: Colors.white,
+              buttonBorderColor: Colors.green,
+            )
+        // builder: (context) => AlertDialog(
+        //   backgroundColor: Colors.black,
+        //   title: Text(
+        //     // todo: add locales
+        //     'Чел, тебе не повезло, минус вайб(',
+        //     style: TextStyle(color: Colors.white),
+        //   ),
+        //   content: Text(
+        //     // todo: add locales
+        //
+        //     'Попробуй еще раз!',
+        //     style: TextStyle(color: Colors.white),
+        //   ),
+        //   actions: [
+        //     TextButton(
+        //       onPressed: () => Navigator.pop(context),
+        //       child: Text('OK', style: TextStyle(color: Colors.purple)),
+        //     ),
+        //   ],
+        // ),
+        );
   }
 
   @override
