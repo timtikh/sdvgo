@@ -10,7 +10,7 @@ class AnimatedWelcomeText extends StatelessWidget {
     Key? key,
     required this.text,
     required this.fadeAnimation,
-    this.fontSize = 16,
+    this.fontSize = 25,
     this.opacity = 0.7,
   }) : super(key: key);
 
@@ -32,4 +32,4 @@ class AnimatedWelcomeText extends StatelessWidget {
       },
     );
   }
-} 
+}

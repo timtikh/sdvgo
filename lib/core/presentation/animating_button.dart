@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+
 import 'button_content.dart';
 
 class AnimatingButton extends StatefulWidget {
   final Widget child;
   final int speed;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final Color borderColor;
   final Color bgcolor;
 
