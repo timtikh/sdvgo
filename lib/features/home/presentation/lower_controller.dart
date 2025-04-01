@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sdvgo/features/scooter_game/presentation/scooter_game_widget.dart';
 
 // TODO: он типо должен хэндлить логику переключения между списком вижетов
 // TODO:  а в идеале вообще быть унаследован от одного и того же типа
@@ -13,6 +14,9 @@ class LowerController extends StatefulWidget {
 class _LowerControllerState extends State<LowerController> {
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.green.shade100,);
+    // TODO: add callback method realisation
+    return ScooterGameWidget(addClicks: () {
+      print('cool job');
+    },);
   }
 }

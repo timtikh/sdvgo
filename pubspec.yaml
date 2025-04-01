@@ -21,6 +21,7 @@ dependencies:
   google_sign_in: ^6.3.0
   firebase_core: ^3.12.1
   firebase_auth: ^5.5.1
+  flame: ^1.26.1
 
   flutter_localizations:
     sdk: flutter
@@ -39,7 +40,7 @@ flutter:
   assets:
     - assets/fonts/ComicSansMS.ttf
     - assets/fonts/Chococooky.ttf
-    - assets/images/smiley_face.png
+    - assets/images/
   fonts:
     - family: ComicSansMS
       fonts:
