@@ -1,9 +1,6 @@
 name: sdvgo
 description: "A new Flutter project."
-
 publish_to: 'none'
-
-
 version: 1.0.0+1
 
 environment:
@@ -12,46 +9,46 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.8
-  provider: ^6.1.2
   animate_gradient: ^0.0.3
   google_fonts: ^6.2.1
-  camera: ^0.10.5
+  provider: ^6.1.2
+  flutter_bloc: ^9.1.0
+  bloc: ^9.0.0
+  camera: ^0.11.1
+  video_player: ^2.5.0
+  flame: ^1.26.1
   google_sign_in: ^6.3.0
   firebase_core: ^3.12.1
   firebase_auth: ^5.5.1
-
+  cloud_firestore: ^5.6.5
   yx_scope_flutter: ^1.0.0
-  yx_scope: 1.0.2
-  flutter_bloc: 9.1.0
-  bloc: ^9.0.0
-  equatable: ^2.0.5
-  flame: ^1.26.1
-
-  flutter_localizations:
-    sdk: flutter
+  yx_scope: ^1.0.2
+  equatable: ^2.0.7
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
-
-
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   custom_lint: ^0.5.3
   yx_scope_linter: ^0.1.2
-
   flutter_lints: ^5.0.0
-  build_runner: ^2.4.13
-  freezed: ^2.5.2
-  json_serializable: ^6.8.0
+  build_runner: ^2.4.15
+  json_serializable: ^6.9.4
+  freezed: ^3.0.0-0.0.dev
+
+dependency_overrides:
+  analyzer: ^6.5.0
 
 flutter:
   generate: true
   assets:
     - assets/fonts/ComicSansMS.ttf
     - assets/fonts/Chococooky.ttf
+    - assets/tiktoks.json
     - assets/images/
   fonts:
     - family: ComicSansMS
@@ -60,5 +57,4 @@ flutter:
     - family: ChocoCooky
       fonts:
         - asset: assets/fonts/Chococooky.ttf
-
   uses-material-design: true
