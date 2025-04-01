@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'animating_button.dart';
 import 'static_button.dart';
 
@@ -8,7 +9,7 @@ class MenuButton extends StatelessWidget {
   final Color textColor;
   final int? speed;
   final Color bgcolor;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   const MenuButton({
     super.key,

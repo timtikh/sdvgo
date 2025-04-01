@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
-import 'google_sign_in_button.dart';
+
+import 'package:flutter/material.dart';
+import 'package:sdvgo/core/presentation/menu_button.dart';
 
 class GoogleSignInRoulette extends StatefulWidget {
   final Function()? onLuckyButtonPressed;
@@ -14,7 +15,8 @@ class GoogleSignInRoulette extends StatefulWidget {
   State<GoogleSignInRoulette> createState() => _GoogleSignInRouletteState();
 }
 
-class _GoogleSignInRouletteState extends State<GoogleSignInRoulette> with TickerProviderStateMixin {
+class _GoogleSignInRouletteState extends State<GoogleSignInRoulette>
+    with TickerProviderStateMixin {
   late List<AnimationController> _controllers;
   late List<Animation<double>> _xAnimations;
   late List<Animation<double>> _yAnimations;
@@ -25,16 +27,58 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette> with Ticker
   int _luckyButtonIndex = 0;
   bool _gameStarted = false;
 
+  // Random colors for each button
+  late List<Color> _textColors;
+  late List<Color> _borderColors;
+  late List<Color> _backgroundColors;
+
+  // Helper function to generate random bright color
+  Color _getRandomColor() {
+    final random = math.Random();
+    return Color.fromRGBO(
+      random.nextInt(200) + 55, // More vibrant with 55-255 range
+      random.nextInt(200) + 55,
+      random.nextInt(200) + 55,
+      1.0,
+    );
+  }
+
   @override
   void initState() {
     super.initState();
     _luckyButtonIndex = DateTime.now().millisecondsSinceEpoch % 3;
-    _controllers = List.generate(3, (_) => AnimationController(
-      duration: Duration(seconds: 2 + math.Random().nextInt(2)), // Random duration between 2-4 seconds
-      vsync: this,
-    ));
+    _controllers = List.generate(
+        3,
+        (_) => AnimationController(
+              duration: Duration(
+                  seconds: 2 +
+                      math.Random()
+                          .nextInt(2)), // Random duration between 2-4 seconds
+              vsync: this,
+            ));
 
     final random = math.Random(DateTime.now().millisecondsSinceEpoch);
+
+    // Generate random colors for each button
+    // _textColors = List.generate(3, (_) => _getRandomColor());
+    _textColors = [
+      Colors.white,
+      Colors.purple,
+      Colors.black,
+      Colors.teal,
+    ];
+
+    _borderColors = List.generate(3, (_) => _getRandomColor());
+    // _backgroundColors = List.generate(3, (_) => _getRandomColor());
+    _backgroundColors = [
+      Colors.red,
+      Colors.yellow,
+      Colors.green,
+      Colors.transparent,
+      Colors.transparent,
+    ];
+    _textColors.shuffle();
+    _backgroundColors.shuffle();
 
     // Create random movement patterns for each button
     _xAnimations = List.generate(3, (index) {
@@ -62,7 +106,8 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette> with Ticker
     });
 
     _scaleAnimations = List.generate(3, (index) {
-      final scale = random.nextDouble() * 0.4 + 0.8; // Random scale between 0.8 and 1.2
+      final scale =
+          random.nextDouble() * 0.4 + 0.8; // Random scale between 0.8 and 1.2
       return Tween<double>(
         begin: 1.0,
         end: scale,
@@ -73,7 +118,9 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette> with Ticker
     });
 
     _rotateAnimations = List.generate(3, (index) {
-      final rotation = random.nextDouble() * 4 * math.pi; // Random rotation up to 2 full turns
+      final rotation = random.nextDouble() *
+          4 *
+          math.pi; // Random rotation up to 2 full turns
       return Tween<double>(
         begin: 0.0,
         end: rotation,
@@ -84,9 +131,10 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette> with Ticker
     });
 
     _opacityAnimations = List.generate(3, (index) {
-      final opacity = random.nextDouble() * 0.3 + 0.4; // Random opacity between 0.4 and 0.7
+      final opacity =
+          random.nextDouble() * 0.1 + 0.9; // Random opacity between 0.8 and 1
       return Tween<double>(
-        begin: 0.4,
+        begin: 0.8,
         end: opacity,
       ).animate(CurvedAnimation(
         parent: _controllers[index],
@@ -123,7 +171,7 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette> with Ticker
           style: TextStyle(color: Colors.white),
         ),
         content: Text(
-                    // todo: add locales
+          // todo: add locales
 
           'Попробуй еще раз!',
           style: TextStyle(color: Colors.white),
@@ -167,19 +215,22 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette> with Ticker
                     angle: _rotateAnimations[index].value,
                     child: Opacity(
                       opacity: _opacityAnimations[index].value,
-                      child: GoogleSignInButton(
-                        isLoading: _isLoading,
-                        isTrashDesign: true,
-                        width: 200, // Fixed width for better visibility
-                        onPressed: () {
-                          _stopAnimation();
-                          if (index == _luckyButtonIndex) {
-                            widget.onLuckyButtonPressed?.call();
-                          } else {
-                            _showNoLuckDialog();
-                            _startAnimation();
-                          }
-                        },
+                      child: MenuButton(
+                        text: 'Гугол вход',
+                        textColor: _textColors[index],
+                        borderColor: _borderColors[index],
+                        bgcolor: _backgroundColors[index],
+                        onTap: _isLoading
+                            ? null
+                            : () {
+                                _stopAnimation();
+                                if (index == _luckyButtonIndex) {
+                                  widget.onLuckyButtonPressed?.call();
+                                } else {
+                                  _showNoLuckDialog();
+                                  _startAnimation();
+                                }
+                              },
                       ),
                     ),
                   ),
@@ -191,4 +242,4 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette> with Ticker
       ),
     );
   }
-} 
+}

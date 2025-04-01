@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sdvgo/core/di/app_scope.dart';
+import 'package:sdvgo/core/presentation/gradient_background.dart';
 import 'package:sdvgo/features/auth/domain/cubits/auth_cubit.dart';
 import 'package:yx_scope_flutter/yx_scope_flutter.dart';
 
 import '../widgets/animated_logo.dart';
 import '../widgets/animated_welcome_text.dart';
 import '../widgets/google_sign_in_roulette.dart';
-import '../widgets/trash_background.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -58,35 +58,37 @@ class _LoginPageState extends State<LoginPage>
               );
             }
           },
-          child: TrashBackground(
-            child: BlocBuilder<AuthCubit, AuthState>(
-              bloc: authCubit,
-              builder: (context, state) {
-                return Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      AnimatedLogo(
-                        text: 'SDVGO',
-                        fadeAnimation: _fadeAnimation,
-                      ),
-                      SizedBox(height: 40),
-                      state.isLoading
-                          ? CircularProgressIndicator()
-                          : GoogleSignInRoulette(
-                              onLuckyButtonPressed: () {
-                                authCubit.signInWithGoogle();
-                              },
-                            ),
-                      SizedBox(height: 20),
-                      AnimatedWelcomeText(
-                        text: 'Суперапп для зумеров!',
-                        fadeAnimation: _fadeAnimation,
-                      ),
-                    ],
-                  ),
-                );
-              },
+          child: Scaffold(
+            body: GradientBackground(
+              child: BlocBuilder<AuthCubit, AuthState>(
+                bloc: authCubit,
+                builder: (context, state) {
+                  return Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AnimatedLogo(
+                          text: 'SDVGO',
+                          fadeAnimation: _fadeAnimation,
+                        ),
+                        SizedBox(height: 40),
+                        state.isLoading
+                            ? CircularProgressIndicator()
+                            : GoogleSignInRoulette(
+                                onLuckyButtonPressed: () {
+                                  authCubit.signInWithGoogle();
+                                },
+                              ),
+                        SizedBox(height: 150),
+                        AnimatedWelcomeText(
+                          text: 'Суперапп для зумеров!',
+                          fadeAnimation: _fadeAnimation,
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
             ),
           ),
         );

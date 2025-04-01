@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
 
 class AnimatedLogo extends StatefulWidget {
   final String text;
@@ -10,14 +11,15 @@ class AnimatedLogo extends StatefulWidget {
     Key? key,
     required this.text,
     required this.fadeAnimation,
-    this.fontSize = 48,
+    this.fontSize = 80,
   }) : super(key: key);
 
   @override
   State<AnimatedLogo> createState() => _AnimatedLogoState();
 }
 
-class _AnimatedLogoState extends State<AnimatedLogo> with TickerProviderStateMixin {
+class _AnimatedLogoState extends State<AnimatedLogo>
+    with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _xAnimation;
   late Animation<double> _yAnimation;
@@ -45,7 +47,7 @@ class _AnimatedLogoState extends State<AnimatedLogo> with TickerProviderStateMix
 
     // Create random movement patterns
     final random = math.Random(DateTime.now().millisecondsSinceEpoch);
-    
+
     // Main movement
     _xAnimation = Tween<double>(
       begin: -0.5,
@@ -106,7 +108,8 @@ class _AnimatedLogoState extends State<AnimatedLogo> with TickerProviderStateMix
   void _updateColor() {
     if (_controller.value > 0.95 || _controller.value < 0.05) {
       setState(() {
-        _currentColor = _colors[DateTime.now().millisecondsSinceEpoch % _colors.length];
+        _currentColor =
+            _colors[DateTime.now().millisecondsSinceEpoch % _colors.length];
       });
     }
   }
@@ -176,4 +179,4 @@ class _AnimatedLogoState extends State<AnimatedLogo> with TickerProviderStateMix
       ),
     );
   }
-} 
+}
