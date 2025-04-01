@@ -8,27 +8,47 @@ class TikTokRepositoryImpl implements TikTokRepository {
 
   TikTokRepositoryImpl(this._firestore);
 
-  Future<List<Video>> getVideos({int limit = 10, int offset = 0}) async {
+  Future<List<Video>> getVideos({
+    int limit = 5,
+    DocumentSnapshot? startAfter,
+  }) async {
     try {
-      final snapshot = await _firestore
+      var query = _firestore
           .collection(_collectionName)
-          .limit(limit)
-          .get();
+          .orderBy('id', descending: true)
+          .limit(limit);
+
+      if (startAfter != null) {
+        query = query.startAfterDocument(startAfter);
+      }
+
+      final snapshot = await query.get();
 
       if (snapshot.docs.isEmpty) {
         print('No documents found in collection $_collectionName');
       }
 
       return snapshot.docs.map((doc) {
-        print('Document data: ${doc.data()}'); // Debug print
         return Video.fromJson(doc.data());
       }).toList();
     } catch (e) {
-      print('Firestore error: $e'); // More detailed error
+      print('Firestore error: $e');
       throw Exception('Failed to fetch videos: $e');
     }
   }
 
+  @override
+  Future<DocumentSnapshot?> getLastDocument(String videoId) async {
+    try {
+      final doc = await _firestore.collection(_collectionName).doc(videoId).get();
+      return doc.exists ? doc : null;
+    } catch (e) {
+      print('Firestore error: $e');
+      return null;
+    }
+  }
+
+  // УДАЛЯЮ? кэшить не надо вроде
   @override
   Future<void> cacheVideos(List<Video> videos) async {
     try {
@@ -41,7 +61,7 @@ class TikTokRepositoryImpl implements TikTokRepository {
   @override
   Future<List<Video>> getCachedVideos({int limit = 10, int offset = 0}) async {
     // TODO: caching
-    return getVideos(limit: limit, offset: offset);
+    return getVideos(limit: limit);
   }
 
   @override

@@ -9,6 +9,8 @@ class TikTokState extends Equatable {
   final String? error;
   final bool hasMore;
   final bool isLoadingMore;
+  final Video? preloadedVideo;
+  final List<Video> preloadedVideos;
 
   const TikTokState({
     this.status = TikTokStatus.initial,
@@ -16,6 +18,8 @@ class TikTokState extends Equatable {
     this.error,
     this.hasMore = true,
     this.isLoadingMore = false,
+    this.preloadedVideo,
+    this.preloadedVideos = const [],
   });
 
   TikTokState copyWith({
@@ -24,6 +28,8 @@ class TikTokState extends Equatable {
     String? error,
     bool? hasMore,
     bool? isLoadingMore,
+    Video? preloadedVideo,
+    List<Video>? preloadedVideos,
   }) {
     return TikTokState(
       status: status ?? this.status,
@@ -31,9 +37,11 @@ class TikTokState extends Equatable {
       error: error ?? this.error,
       hasMore: hasMore ?? this.hasMore,
       isLoadingMore: isLoadingMore ?? this.isLoadingMore,
+      preloadedVideo: preloadedVideo ?? this.preloadedVideo,
+      preloadedVideos: preloadedVideos ?? this.preloadedVideos,
     );
   }
 
   @override
-  List<Object?> get props => [status, videos, error, hasMore, isLoadingMore];
+  List<Object?> get props => [status, videos, error, hasMore, isLoadingMore, preloadedVideo, preloadedVideos];
 } 
