@@ -1,0 +1,244 @@
+{
+  "tiktoks": [
+    {
+      "id": "1",
+      "user": "BorisTheExplorer",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Как я потерял штаны в метро 🚇",
+      "likes": "245K",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok1.mp4"
+    },
+    {
+      "id": "2",
+      "user": "Natasha_Comrade",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Готовим борщ как бабушка 👵🍲",
+      "likes": "1.2M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok2.mp4"
+    },
+    {
+      "id": "3",
+      "user": "Dmitri_DanceMaster",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Танцы в снегу без штанов ❄️🩳",
+      "likes": "876K",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok3.mp4"
+    },
+    {
+      "id": "4",
+      "user": "Siberian_Husky_Lover",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Мой хаски съел мой диплом 🐺📄",
+      "likes": "500K",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok4.mp4"
+    },
+    {
+      "id": "5",
+      "user": "Vodka_Enthusiast",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Почему водка лучше психолога 🥃😆",
+      "likes": "1.5M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok5.mp4"
+    },
+    {
+      "id": "6",
+      "user": "Gopnik_King",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Семечки и Adidas — стиль на века 👟🌻",
+      "likes": "720K",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok6.mp4"
+    },
+    {
+      "id": "7",
+      "user": "Kalinka_Malinka",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Как я научила кота танцевать калинку 🐱💃",
+      "likes": "2.3M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok7.mp4"
+    },
+    {
+      "id": "8",
+      "user": "Babushka_Tech",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Моя бабушка взломала мой айфон 👵📱",
+      "likes": "950K",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok8.mp4"
+    },
+    {
+      "id": "9",
+      "user": "Putin_Parody",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Если бы Путин был блогером (пародия) 😂",
+      "likes": "3.7M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok9.mp4"
+    },
+    {
+      "id": "10",
+      "user": "Matryoshka_DIY",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Как сделать матрешку из картошки 🥔🎎",
+      "likes": "420K",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok10.mp4"
+    },
+    {
+      "id": "11",
+      "user": "Kremlin_Comedian",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Шутки про санкции, которые смешные только у нас 😅",
+      "likes": "680K",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok11.mp4"
+    },
+    {
+      "id": "12",
+      "user": "Balalaika_Pro",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Играю 'Smoke on the Water' на балалайке 🎸🔥",
+      "likes": "1.1M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok12.mp4"
+    },
+    {
+      "id": "13",
+      "user": "Sputnik_News",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Как мы запустили TikTok в космос 🚀📱",
+      "likes": "2.5M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok13.mp4"
+    },
+    {
+      "id": "14",
+      "user": "Kvas_Enjoyer",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Почему квас — это русская кола 🍺🇷🇺",
+      "likes": "890K",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok14.mp4"
+    },
+    {
+      "id": "15",
+      "user": "Bear_Wrestler",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Медведь выиграл у меня в армрестлинге 🐻💪",
+      "likes": "4.2M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok15.mp4"
+    },
+    {
+      "id": "16",
+      "user": "Gulag_Gamer",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Играю в Майнкрафт в настоящем ГУЛАГе ⛏️😅",
+      "likes": "1.8M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok16.mp4"
+    },
+    {
+      "id": "17",
+      "user": "Tsar_TikTok",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Как бы выглядел TikTok в 1917 году 👑📱",
+      "likes": "3.1M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok17.mp4"
+    },
+    {
+      "id": "18",
+      "user": "Blin_Maker",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Готовлю блины на реакторе Чернобыля ☢️🥞",
+      "likes": "2.7M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok18.mp4"
+    },
+    {
+      "id": "19",
+      "user": "Squat_Professor",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Научное объяснение, почему все русские приседают 🧪👨‍🔬",
+      "likes": "1.4M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok19.mp4"
+    },
+    {
+      "id": "20",
+      "user": "AK-47_DJ",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Ремикс калибр 7.62 на диджейском пульте 🔫🎛️",
+      "likes": "5.3M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok20.mp4"
+    },
+    {
+      "id": "21",
+      "user": "Tundra_Streamer",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Стримлю из Сибири при -40°C ❄️🔥",
+      "likes": "2.9M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok21.mp4"
+    },
+    {
+      "id": "22",
+      "user": "KGB_Agent_007",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Шпионские лайфхаки от бывшего КГБ 🕵️‍♂️",
+      "likes": "3.8M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok22.mp4"
+    },
+    {
+      "id": "23",
+      "user": "Lada_Racer",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Гонки на Ладе против Ferrari — кто кого? 🚗💨",
+      "likes": "4.6M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok23.mp4"
+    },
+    {
+      "id": "24",
+      "user": "Pepsi_Chernobyl",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Нашел пепси в Припяти — еще вкусное! ☢️🥤",
+      "likes": "6.2M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok24.mp4"
+    },
+    {
+      "id": "25",
+      "user": "Putin_VS_Elon",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Путин и Маск: битва мемов (мой монтаж) 🤼‍♂️",
+      "likes": "7.1M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok25.mp4"
+    },
+    {
+      "id": "26",
+      "user": "Russian_Hackerman",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Как взломать пентагон на коленке 💻🇷🇺",
+      "likes": "3.3M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok26.mp4"
+    },
+    {
+      "id": "27",
+      "user": "Gagarin_TikTok",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "ТикТок из космоса — как Гагарин не снял 😢🚀",
+      "likes": "5.8M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok27.mp4"
+    },
+    {
+      "id": "28",
+      "user": "Polonium_Tea",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Готовим чай по-лондонски (осторожно!) ☕💀",
+      "likes": "4.9M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok28.mp4"
+    },
+    {
+      "id": "29",
+      "user": "Stalin_Cat",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Мой кот ведет себя как Сталин (уже боится) 😼✊",
+      "likes": "2.2M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok29.mp4"
+    },
+    {
+      "id": "30",
+      "user": "Borsch_VS_Ukraine",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Спор о борще: Россия vs Украина (битва шефов) 🍲⚔️",
+      "likes": "9.9M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok30.mp4"
+    }
+  ]
+}
