@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ButtonContent extends StatelessWidget {
   final Widget child;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final Color borderColor;
   final Color bgcolor;
 
