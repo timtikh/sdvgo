@@ -45,31 +45,40 @@
 
 ## Firebase настройка
 
-### Для участников команды
+### Если вы сами поднимаете проект - то пропустите первый пункт и создайте проект в CloudConsole)
 
-1. Получите доступ к проекту Firebase от @timtikh
+0. Получите доступ к проекту Firebase от @timtikh (администратор проекта)
+
+1. Сгенерируйте Ключ подписания SHA-1 и передайте его в Project Settings или администратору проекта:
+
+   ```bash
+   keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+   
+   ```
 
 2. Настройка Firebase для Android:
    - Скачайте файл `google-services.json` из [настроек проекта Firebase](https://console.firebase.google.com/project/sdvgo-8f8e5/settings/general/android:com.sirius.yandex.sdvgo?hl=ru)
    - Поместите файл в каталог `android/app/`
 
-3. Настройка Firebase для iOS (если нужно):
+3. Настройка Firebase для iOS (если нужно, но у меня не заработало):
    - Скачайте файл `GoogleService-Info.plist` из настроек проекта Firebase
    - Поместите файл в каталог `ios/Runner/`
 
 4. Установка Firebase CLI и FlutterFire:
    ```bash
-   # Установка Firebase CLI
+   # Установка Firebase CLI (можно не через npm)
    npm install -g firebase-tools
    
    # Авторизация в Firebase
    firebase login
    
-   # Установка FlutterFire CLI (проверь добавился ли в zsh)
+   # Установка FlutterFire CLI (macos: проверь добавился ли в zsh)
    dart pub global activate flutterfire_cli
    
    # Настройка Flutter проекта
    flutterfire configure --project=sdvgo-8f8e5
+   # Соответсвенно если вы сами поднимаете: --project=<project-id>, не sdvgo
+   # возможно попросит ввести com.example.app bundle - com.sirius.yandex.sdvgo
    ```
 
 5. Перезапустите приложение:
@@ -78,6 +87,9 @@
    flutter pub get
    flutter run
    ```
+6. Cold Reboot эмуляторов
+   - Вероятно, ничего не заработает, пока не перезапустите эмулятор - с Hardware-устройствами такого не наблюдалось.
+
 
 ## YX Scope использование
 
@@ -88,56 +100,41 @@ YX Scope - это инструмент для управления зависи�
 1. **Инициализация YX Scope**:
    ```dart
    // В main.dart
-   void main() {
-     YxScope.init();
-     runApp(MyApp());
-   }
+
    ```
 
 2. **Регистрация сервисов**:
    ```dart
-   YxScope.register<AuthService>(() => AuthService());
    ```
 
 3. **Использование сервисов**:
    ```dart
    // В любом месте приложения
-   final authService = YxScope.get<AuthService>();
    ```
 
 4. **Создание скоупов для разделения зависимостей**:
    ```dart
    // Создание нового скоупа
-   final userScope = YxScope.createScope('user');
    
    // Регистрация сервисов в скоупе
-   userScope.register<UserRepository>(() => UserRepository());
    
    // Получение сервиса из скоупа
-   final userRepo = userScope.get<UserRepository>();
    ```
 
 5. **Удаление скоупа**:
    ```dart
-   YxScope.removeScope('user');
    ```
 
 ### Примеры использования
 
 **Авторизация с Firebase**:
 ```dart
-final authService = YxScope.get<AuthService>();
-try {
-  await authService.signInWithGoogle();
-} catch (e) {
-  // Обработка ошибок
-}
+
 ```
 
 **Работа с пользовательскими данными**:
 ```dart
-final userRepository = YxScope.get<UserRepository>();
-final userData = await userRepository.getUserData();
+
 ```
 
 ## Разработка

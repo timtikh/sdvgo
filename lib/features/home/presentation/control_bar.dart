@@ -14,7 +14,7 @@ class ControlBar extends StatelessWidget {
           ControlBarButton(
             title: S.of(context).hqdButton,
             onTap: () {
-              Navigator.pushNamed(context, '/userinfo');
+              Navigator.pushNamed(context, '/profile');
             },
           ),
           SizedBox(
