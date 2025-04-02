@@ -1,0 +1,244 @@
+{
+  "tiktoks": [
+    {
+      "id": "31",
+      "user": "Kremlin_Cat",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Кот Кремля показывает свой офис 😺🏛️",
+      "likes": "2.3M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok31.mp4"
+    },
+    {
+      "id": "32",
+      "user": "Gopnik_Dance",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Танцы в спортивках на крыше 🩳💃",
+      "likes": "1.5M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok32.mp4"
+    },
+    {
+      "id": "33",
+      "user": "Babushka_Streamer",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Моя бабушка стримит варенье 🍓🎮",
+      "likes": "3.2M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok33.mp4"
+    },
+    {
+      "id": "34",
+      "user": "Vodka_Scientist",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Научные опыты с водкой 🧪🥃",
+      "likes": "2.7M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok34.mp4"
+    },
+    {
+      "id": "35",
+      "user": "Bear_Photographer",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Фотосессия с медведем в лесу 📸🐻",
+      "likes": "4.1M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok35.mp4"
+    },
+    {
+      "id": "36",
+      "user": "Kvas_Expert",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Как правильно пить квас 🍺👨‍🔬",
+      "likes": "1.9M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok36.mp4"
+    },
+    {
+      "id": "37",
+      "user": "Lada_Mechanic",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Ремонт Лады на коленке 🛠️🚗",
+      "likes": "2.4M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok37.mp4"
+    },
+    {
+      "id": "38",
+      "user": "Gagarin_Reenactment",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Как я полетел в космос на велосипеде 🚲🚀",
+      "likes": "3.8M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok38.mp4"
+    },
+    {
+      "id": "39",
+      "user": "Borsch_Master",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Секретный рецепт борща от бабушки 👵🍲",
+      "likes": "2.6M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok39.mp4"
+    },
+    {
+      "id": "40",
+      "user": "KGB_Tips",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Лайфхаки от бывшего КГБ 🕵️‍♂️",
+      "likes": "3.5M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok40.mp4"
+    },
+    {
+      "id": "41",
+      "user": "Siberian_Survival",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Как выжить в Сибири зимой ❄️🏕️",
+      "likes": "2.8M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok41.mp4"
+    },
+    {
+      "id": "42",
+      "user": "Balalaika_Rock",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Рок-концерт на балалайке 🎸🤘",
+      "likes": "1.7M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok42.mp4"
+    },
+    {
+      "id": "43",
+      "user": "Matryoshka_Art",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Рисую матрешки на снегу ❄️🎨",
+      "likes": "2.1M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok43.mp4"
+    },
+    {
+      "id": "44",
+      "user": "Putin_Dance",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Танцы как Путин 💃🕺",
+      "likes": "4.3M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok44.mp4"
+    },
+    {
+      "id": "45",
+      "user": "Squat_Challenge",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Челлендж: 1000 приседаний 🏋️‍♂️",
+      "likes": "2.9M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok45.mp4"
+    },
+    {
+      "id": "46",
+      "user": "Russian_Hack",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Как взломать холодильник 💻❄️",
+      "likes": "3.4M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok46.mp4"
+    },
+    {
+      "id": "47",
+      "user": "Gopnik_Fashion",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Модный показ спортивных костюмов 👟👕",
+      "likes": "2.5M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok47.mp4"
+    },
+    {
+      "id": "48",
+      "user": "Kremlin_Tour",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Экскурсия по Кремлю на самокате 🛴🏛️",
+      "likes": "3.7M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok48.mp4"
+    },
+    {
+      "id": "49",
+      "user": "Siberian_Sauna",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Баня в -40°C ❄️🔥",
+      "likes": "2.2M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok49.mp4"
+    },
+    {
+      "id": "50",
+      "user": "Vodka_Cocktails",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Коктейли с водкой для бабушки 🍸👵",
+      "likes": "3.1M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok50.mp4"
+    },
+    {
+      "id": "51",
+      "user": "Bear_Yoga",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Йога с медведем в лесу 🧘‍♂️🐻",
+      "likes": "4.5M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok51.mp4"
+    },
+    {
+      "id": "52",
+      "user": "Kvas_Challenge",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Выпиваю 5 литров кваса за раз 🍺",
+      "likes": "2.8M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok52.mp4"
+    },
+    {
+      "id": "53",
+      "user": "Lada_Rally",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Ралли на Ладе по бездорожью 🚗💨",
+      "likes": "3.6M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok53.mp4"
+    },
+    {
+      "id": "54",
+      "user": "Gagarin_Space",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Запускаю ракету из картошки 🚀🥔",
+      "likes": "4.2M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok54.mp4"
+    },
+    {
+      "id": "55",
+      "user": "Borsch_Battle",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Битва борщей: мама vs бабушка 👩‍🍳👵",
+      "likes": "3.9M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok55.mp4"
+    },
+    {
+      "id": "56",
+      "user": "KGB_Spy",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Шпионские лайфхаки для дома 🕵️‍♂️🏠",
+      "likes": "2.7M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok56.mp4"
+    },
+    {
+      "id": "57",
+      "user": "Siberian_Ice",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Купание в проруби на работу ❄️🏊‍♂️",
+      "likes": "3.3M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok57.mp4"
+    },
+    {
+      "id": "58",
+      "user": "Balalaika_Classic",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Играю классику на балалайке 🎸🎵",
+      "likes": "2.4M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok58.mp4"
+    },
+    {
+      "id": "59",
+      "user": "Matryoshka_Dance",
+      "userPic": "https://i.imgur.com/VvJpQ2a.jpg",
+      "videoTitle": "Танцы с матрешками 💃🎎",
+      "likes": "3.8M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok59.mp4"
+    },
+    {
+      "id": "60",
+      "user": "Putin_Cooking",
+      "userPic": "https://i.imgur.com/3QX5wQk.jpg",
+      "videoTitle": "Готовлю как Путин 👨‍🍳",
+      "likes": "4.7M",
+      "uri": "https://raw.githubusercontent.com/timtikh/tiktoks/main/tiktok_collection_1/tiktok60.mp4"
+    }
+  ]
+} 
