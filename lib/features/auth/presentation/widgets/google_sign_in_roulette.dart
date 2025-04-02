@@ -176,28 +176,7 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette>
               buttonBgColor: Colors.redAccent,
               buttonTextColor: Colors.white,
               buttonBorderColor: Colors.green,
-            )
-        // builder: (context) => AlertDialog(
-        //   backgroundColor: Colors.black,
-        //   title: Text(
-        //     // todo: add locales
-        //     'Чел, тебе не повезло, минус вайб(',
-        //     style: TextStyle(color: Colors.white),
-        //   ),
-        //   content: Text(
-        //     // todo: add locales
-        //
-        //     'Попробуй еще раз!',
-        //     style: TextStyle(color: Colors.white),
-        //   ),
-        //   actions: [
-        //     TextButton(
-        //       onPressed: () => Navigator.pop(context),
-        //       child: Text('OK', style: TextStyle(color: Colors.purple)),
-        //     ),
-        //   ],
-        // ),
-        );
+            ));
   }
 
   @override
