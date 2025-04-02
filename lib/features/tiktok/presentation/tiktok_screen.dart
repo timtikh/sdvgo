@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:video_player/video_player.dart';
-import 'cubit/tiktok_cubit.dart';
-import 'cubit/tiktok_state.dart';
+
+import '../domain/cubit/tiktok_cubit.dart';
+import '../domain/cubit/tiktok_state.dart';
 
 class TikTokScreen extends StatefulWidget {
   const TikTokScreen({Key? key}) : super(key: key);
