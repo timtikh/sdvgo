@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
 
 class DraggableBottomSheetWidget extends StatelessWidget {
   final DraggableScrollableController controller;
@@ -81,12 +82,19 @@ class PressHoldButton extends StatelessWidget {
     return GestureDetector(
       onTapDown: (_) {
         onPressed(true);
+        Vibration.hasVibrator().then((hasVibrator) {
+          if (hasVibrator == true) {
+            Vibration.vibrate(pattern: [0, 500], repeat: 0);
+          }
+        });
       },
       onTapUp: (_) {
         onPressed(false);
+        Vibration.cancel();
       },
       onTapCancel: () {
         onPressed(false);
+        Vibration.cancel();
       },
       child: Container(
         height: 400,

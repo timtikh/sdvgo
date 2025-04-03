@@ -3,26 +3,70 @@ import 'package:sdvgo/core/presentation/menu_button.dart';
 
 class DialogWindow extends StatelessWidget {
   final String dialogText;
-  final String buttonText;
+  final List<Widget> buttons;
   final Color bgColor;
   final Color dialogTextColor;
-  final Color buttonBgColor;
-  final Color buttonTextColor;
-  final Color buttonBorderColor;
   final Color borderColor;
-  final VoidCallback buttonOnTap;
 
-  const DialogWindow(
-      {required this.dialogText,
-      required this.buttonText,
-      required this.buttonOnTap,
-      this.bgColor = Colors.purple,
-      this.dialogTextColor = Colors.blue,
-      this.buttonBgColor = Colors.green,
-      this.buttonTextColor = Colors.yellow,
-      this.buttonBorderColor = Colors.red,
-      this.borderColor = Colors.orange,
-      super.key});
+  const DialogWindow({
+    required this.dialogText,
+    required this.buttons,
+    this.bgColor = Colors.purple,
+    this.dialogTextColor = Colors.blue,
+    this.borderColor = Colors.orange,
+    super.key,
+  });
+
+  // Constructor for creating buttons with the same style
+  factory DialogWindow.withButtons({
+    required String dialogText,
+    required List<String> buttonTexts,
+    required List<VoidCallback> buttonOnTaps,
+    Color bgColor = Colors.purple,
+    Color dialogTextColor = Colors.blue,
+    Color buttonBgColor = Colors.green,
+    Color buttonTextColor = Colors.yellow,
+    Color buttonBorderColor = Colors.red,
+    Color borderColor = Colors.orange,
+    double buttonHeight = 50,
+    Key? key,
+  }) {
+    assert(buttonTexts.length == buttonOnTaps.length,
+        'The number of button texts must match the number of button callbacks');
+
+    final buttonWidgets = <Widget>[];
+
+    for (int i = 0; i < buttonTexts.length; i++) {
+      // Add spacing between buttons
+      if (i > 0) {
+        buttonWidgets.add(const SizedBox(height: 10));
+      }
+
+      buttonWidgets.add(
+        SizedBox(
+          width: 200,
+          height: buttonHeight,
+          child: MenuButton(
+            text: buttonTexts[i],
+            textColor: buttonTextColor,
+            borderColor: buttonBorderColor,
+            bgcolor: buttonBgColor.withOpacity(0.7),
+            onTap: buttonOnTaps[i],
+            fontSize: 25,
+          ),
+        ),
+      );
+    }
+
+    return DialogWindow(
+      dialogText: dialogText,
+      buttons: buttonWidgets,
+      bgColor: bgColor,
+      dialogTextColor: dialogTextColor,
+      borderColor: borderColor,
+      key: key,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +75,9 @@ class DialogWindow extends StatelessWidget {
       child: Center(
         child: Container(
           padding: const EdgeInsets.all(10.0),
-          height: 200,
+          height: buttons.length > 1
+              ? 250
+              : 200, // Adjust height based on number of buttons
           width: 300,
           decoration: BoxDecoration(
             color: bgColor.withOpacity(0.93),
@@ -49,18 +95,7 @@ class DialogWindow extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              SizedBox(
-                width: 200,
-                height: 75,
-                child: MenuButton(
-                  text: buttonText,
-                  textColor: buttonTextColor,
-                  borderColor: buttonBorderColor,
-                  bgcolor: buttonBgColor.withOpacity(0.7),
-                  onTap: buttonOnTap,
-                  fontSize: 25,
-                ),
-              ),
+              ...buttons,
             ],
           ),
         ),

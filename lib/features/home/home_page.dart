@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sdvgo/core/presentation/dialog_window.dart';
 import 'package:sdvgo/core/presentation/gradient_background.dart';
+import 'package:sdvgo/core/presentation/menu_button.dart';
 import 'package:sdvgo/features/home/presentation/clicker_button.dart';
 import 'package:sdvgo/features/home/presentation/draggable_bottom_sheet.dart';
+import 'package:shake_gesture/shake_gesture.dart';
 import 'package:sdvgo/features/home/presentation/lower_controller.dart';
 import 'package:sdvgo/features/home/presentation/upper_controller.dart';
-import 'package:shake_gesture/shake_gesture.dart';
 
 import 'presentation/control_bar.dart';
 
@@ -21,6 +22,7 @@ class _HomePageState extends State<HomePage>
   bool _isDialogShowing = false;
   bool _isBottomSheetVisible = false;
   final _bottomSheetController = DraggableScrollableController();
+  bool _isCurrentRoute = true;
 
   // Animation controller
   late AnimationController _opacityController;
@@ -41,6 +43,26 @@ class _HomePageState extends State<HomePage>
       begin: 0.0,
       end: 1.0,
     ).animate(_opacityController);
+
+    // Add navigation observer
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _checkIfCurrentRoute();
+    });
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _checkIfCurrentRoute();
+  }
+
+  void _checkIfCurrentRoute() {
+    final route = ModalRoute.of(context);
+    if (route != null) {
+      setState(() {
+        _isCurrentRoute = route.isCurrent;
+      });
+    }
   }
 
   @override
@@ -75,20 +97,36 @@ class _HomePageState extends State<HomePage>
   }
 
   void _showVapeDialog() {
-    if (!_isDialogShowing) {
+    // Only show dialog if this is the current route and dialog is not already showing
+    if (_isCurrentRoute && !_isDialogShowing) {
       _isDialogShowing = true;
       showDialog(
         context: context,
-        builder: (context) => DialogWindow(
+        builder: (context) => DialogWindow.withButtons(
           dialogText: "Причина тряски?",
-          buttonText: "Повейпить",
-          buttonOnTap: () {
-            Navigator.pop(context);
-            _isDialogShowing = false;
-            _showBottomSheet();
-          },
+          buttonTexts: ["Повейпить", "Настройки"],
+          buttonOnTaps: [
+            () {
+              Navigator.pop(context);
+              _isDialogShowing = false;
+              _showBottomSheet();
+            },
+            () {
+              Navigator.pop(context);
+              _isDialogShowing = false;
+              Navigator.pushNamed(context, "/userinfo").then((_) {
+                // Check route status when returning from navigation
+                _checkIfCurrentRoute();
+              });
+            },
+          ],
+          buttonTextColor: Colors.yellow,
+          buttonBorderColor: Colors.red,
+          buttonBgColor: Colors.green,
         ),
-      );
+      ).then((_) {
+        _isDialogShowing = false;
+      });
     }
   }
 
@@ -103,6 +141,11 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
+    // Update current route status on build
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _checkIfCurrentRoute();
+    });
+
     return Stack(
       children: [
         Scaffold(

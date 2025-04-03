@@ -20,10 +20,15 @@ class ScooterGameWidget extends StatelessWidget {
     return GameWidget<ScooterGame>.controlled(
       gameFactory: () => ScooterGame(addClicks: addClicks),
       overlayBuilderMap: {
-        'GameOver': (_, game) => DialogWindow(
+        'GameOver': (_, game) => DialogWindow.withButtons(
               dialogText: "Game Over\nYour score: ${game.points}",
-              buttonText: "Play again",
-              buttonOnTap: game.restartingGame,
+              buttonTexts: ["Play again"],
+              buttonOnTaps: [
+                game.restartingGame,
+              ],
+              buttonTextColor: Colors.yellow,
+              buttonBorderColor: Colors.red,
+              buttonBgColor: Colors.green,
             )
       },
     );

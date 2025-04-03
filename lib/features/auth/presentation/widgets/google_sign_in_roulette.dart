@@ -164,12 +164,14 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette>
   void _showNoLuckDialog() {
     showDialog(
         context: context,
-        builder: (context) => DialogWindow(
+        builder: (context) => DialogWindow.withButtons(
               dialogText: 'Чел, тебе не повезло, минус вайб(',
-              buttonText: 'OK',
-              buttonOnTap: () {
-                Navigator.pop(context);
-              },
+              buttonTexts: ['OK'],
+              buttonOnTaps: [
+                () {
+                  Navigator.pop(context);
+                }
+              ],
               borderColor: Colors.green,
               bgColor: Colors.yellow,
               dialogTextColor: Colors.red,
