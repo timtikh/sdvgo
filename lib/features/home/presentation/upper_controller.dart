@@ -3,12 +3,11 @@ import 'dart:core'; // For using URIs
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:sdvgo/core/presentation/swiping_container.dart';
 import 'package:sdvgo/features/tiktok/data/repositories/tiktok_repository_impl.dart';
 import 'package:sdvgo/features/tiktok/presentation/tiktok_screen.dart';
-import '../../tiktok/domain/cubit/tiktok_cubit.dart'; // For using URIs
 
+import '../../tiktok/domain/cubit/tiktok_cubit.dart'; // For using URIs
 
 // TODO: он типо должен хэндлить логику переключения между списком вижетов
 // TODO:  а в идеале вообще быть унаследован от одного и того же типа
