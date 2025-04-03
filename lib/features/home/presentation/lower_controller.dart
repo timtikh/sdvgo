@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sdvgo/core/presentation/swiping_container.dart';
+import 'package:sdvgo/features/boomer_translator/presentation/boomer_translator_screen.dart';
 import 'package:sdvgo/features/scooter_game/presentation/scooter_game_widget.dart';
 
 // TODO: он типо должен хэндлить логику переключения между списком вижетов
@@ -16,18 +17,13 @@ class _LowerControllerState extends State<LowerController> {
   @override
   Widget build(BuildContext context) {
     // TODO: add callback method realisation
-    return ColoredBox(
-      color: Colors.pink.shade100,
-      child: SwipingContainer(
-        children: [
-          ScooterGameWidget(
-            addClicks: () {},
-          ),
-          Center(
-            child: Text('Screen 2'),
-          ),
-        ],
-      ),
+    return SwipingContainer(
+      children: [
+        ScooterGameWidget(
+          addClicks: () {},
+        ),
+        BoomerTranslatorWidget(),
+      ],
     );
   }
 }

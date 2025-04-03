@@ -1,7 +1,14 @@
+import 'package:dio/dio.dart';
+import 'package:sdvgo/core/di/configs.dart';
 import 'package:sdvgo/core/domain/user_statistics_cubit.dart';
 import 'package:sdvgo/features/auth/data/auth_repository_impl.dart';
 import 'package:sdvgo/features/auth/domain/cubits/auth_cubit.dart';
 import 'package:sdvgo/features/auth/domain/repositories/auth_repository.dart';
+import 'package:sdvgo/features/boomer_translator/data/datasource/translator_datasource.dart';
+import 'package:sdvgo/features/boomer_translator/data/repositories_impl/translator_repository_impl.dart';
+import 'package:sdvgo/features/boomer_translator/domain/cubits/translator_cubit.dart';
+import 'package:sdvgo/features/boomer_translator/domain/repositories/translator_repository.dart';
+import 'package:speech_to_text/speech_to_text.dart';
 import 'package:yx_scope/yx_scope.dart';
 
 class AppScopeContainer extends ScopeContainer {
@@ -14,6 +21,22 @@ class AppScopeContainer extends ScopeContainer {
 
   late final authCubitDep =
       dep(() => AuthCubit(authRepository: authRepositoryDep.get));
+
+  // DIO
+  late final _dioDep = dep(() => Dio(AppConfig.dioConfig));
+
+  // Boomer translator section
+  late final speechToTextDep = dep<SpeechToText>(() => SpeechToText());
+
+  late final translatorDatasourceDep =
+      dep(() => TranslatorDatasource(dio: _dioDep.get));
+
+  late final translatorRepositoryDep = dep<TranslatorRepository>(() =>
+      TranslatorRepositoryImpl(
+          translatorDatasource: translatorDatasourceDep.get));
+
+  late final translatorCubitDep = dep(
+      () => TranslatorCubit(translatorRepository: translatorRepositoryDep.get));
 }
 
 class AppScopeHolder extends ScopeHolder<AppScopeContainer> {

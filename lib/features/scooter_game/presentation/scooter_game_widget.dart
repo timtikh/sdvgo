@@ -31,6 +31,7 @@ class ScooterGame extends FlameGame with PanDetector, HasCollisionDetection {
   final VoidCallback addClicks;
 
   late Player player;
+
   /// Number of stripes in game
   final stripes = List.generate(GameConfig.roadLinesCounter, (i) => i);
   int points = 0;
@@ -83,6 +84,7 @@ class ScooterGame extends FlameGame with PanDetector, HasCollisionDetection {
   }
 
   late Vector2 _startPosition;
+
   /// Value of how much user should swipe (in pixels) for triggering handler
   static const _swipeThreshold = 30.0;
 

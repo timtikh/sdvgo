@@ -20,19 +20,22 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.orangeAccent,
       body: SafeArea(
         child: GradientBackground(
-          child: Stack(alignment: Alignment.center, fit: StackFit.loose, children: [
-                      Column(
-          children: [
-            Expanded(flex: 8, child: UpperController()),
-            Expanded(
-              flex: 1,
-              child: ControlBar(),
-            ),
-            Expanded(flex: 8, child: LowerController()),
-          ],
-                      ),
-                      ClickerButton(),
-                    ]),
+          child: Stack(
+              alignment: Alignment.center,
+              fit: StackFit.loose,
+              children: [
+                Column(
+                  children: [
+                    Expanded(flex: 8, child: UpperController()),
+                    Expanded(
+                      flex: 1,
+                      child: ControlBar(),
+                    ),
+                    Expanded(flex: 8, child: LowerController()),
+                  ],
+                ),
+                ClickerButton(),
+              ]),
         ),
       ),
     );

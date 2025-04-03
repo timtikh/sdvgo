@@ -8,6 +8,7 @@
     "description": "click button"
   },
   "settingsButton": "Settings",
+  "boomerTranslator": "Boomer translator",
   "@settingsButton": {
     "description": "Settings button"
   },

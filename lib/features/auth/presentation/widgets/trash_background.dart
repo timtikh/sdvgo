@@ -31,4 +31,4 @@ class TrashBackground extends StatelessWidget {
       ),
     );
   }
-} 
+}
