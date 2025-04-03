@@ -4,9 +4,10 @@ import 'package:video_player/video_player.dart';
 
 import '../domain/cubit/tiktok_cubit.dart';
 import '../domain/cubit/tiktok_state.dart';
+import 'widgets/zoomable_video_player.dart';
 
 class TikTokScreen extends StatefulWidget {
-  const TikTokScreen({Key? key}) : super(key: key);
+  const TikTokScreen({super.key});
 
   @override
   _TikTokScreenState createState() => _TikTokScreenState();
@@ -15,6 +16,7 @@ class TikTokScreen extends StatefulWidget {
 class _TikTokScreenState extends State<TikTokScreen> {
   final PageController _pageController = PageController();
   int _currentIndex = 0;
+  bool _isFullScreen = false; // Track full screen state
 
   @override
   void initState() {
@@ -77,43 +79,43 @@ class _TikTokScreenState extends State<TikTokScreen> {
           );
         }
 
-        return PageView.builder(
-          scrollDirection: Axis.vertical,
-          itemCount: state.videos.length + (state.hasMore ? 1 : 0),
-          controller: _pageController,
-          itemBuilder: (context, index) {
-            if (index >= state.videos.length) {
-              return const Center(child: CircularProgressIndicator());
-            }
+        return GestureDetector(
+          onDoubleTap: () {
+            setState(() {
+              _isFullScreen = !_isFullScreen;
+            });
+          },
+          child: PageView.builder(
+            scrollDirection: Axis.vertical,
+            itemCount: state.videos.length + (state.hasMore ? 1 : 0),
+            controller: _pageController,
+            itemBuilder: (context, index) {
+              final controller =
+                  context.read<TikTokCubit>().getController(index);
+              if (controller == null || !controller.value.isInitialized) {
+                return const Center(child: CircularProgressIndicator());
+              }
 
-            final controller = context.read<TikTokCubit>().getController(index);
-            if (controller == null || !controller.value.isInitialized) {
-              return const Center(child: CircularProgressIndicator());
-            }
-
-            return Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                Center(
-                  child: ClipRect(
-                    child: AspectRatio(
-                      aspectRatio: controller.value.aspectRatio,
-                      child: VideoPlayer(controller),
+              return Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  ZoomableVideoPlayer(
+                    controller: controller,
+                    isFullScreen: _isFullScreen,
+                  ),
+                  VideoProgressIndicator(
+                    controller,
+                    allowScrubbing: true,
+                    colors: const VideoProgressColors(
+                      playedColor: Colors.red,
+                      bufferedColor: Colors.grey,
+                      backgroundColor: Colors.black,
                     ),
                   ),
-                ),
-                VideoProgressIndicator(
-                  controller,
-                  allowScrubbing: true,
-                  colors: const VideoProgressColors(
-                    playedColor: Colors.red,
-                    bufferedColor: Colors.grey,
-                    backgroundColor: Colors.black,
-                  ),
-                ),
-              ],
-            );
-          },
+                ],
+              );
+            },
+          ),
         );
       },
     );

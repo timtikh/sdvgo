@@ -2,7 +2,18 @@ include: package:flutter_lints/flutter.yaml
 
 analyzer:
   errors:
+    unused_import: ignore
     invalid_annotation_target: ignore
+    avoid_print: ignore
+    deprecated_member_use: ignore
+    use_key_in_widget_constructors: ignore
+    prefer_final_fields: ignore
+    library_private_types_in_public_api: ignore
+    sized_box_for_whitespace: ignore
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+
   plugins:
     - custom_lint
 

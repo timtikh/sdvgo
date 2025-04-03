@@ -8,11 +8,11 @@ class AnimatedLogo extends StatefulWidget {
   final Animation<double> fadeAnimation;
 
   const AnimatedLogo({
-    Key? key,
+    super.key,
     required this.text,
     required this.fadeAnimation,
     this.fontSize = 80,
-  }) : super(key: key);
+  });
 
   @override
   State<AnimatedLogo> createState() => _AnimatedLogoState();

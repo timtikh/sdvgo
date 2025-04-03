@@ -1,10 +1,12 @@
+import 'dart:core'; // For using URIs
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:sdvgo/core/presentation/swiping_container.dart';
+import 'package:sdvgo/features/camera/presentation/camera_app.dart';
 import 'package:sdvgo/features/tiktok/data/repositories/tiktok_repository_impl.dart';
 import 'package:sdvgo/features/tiktok/presentation/tiktok_screen.dart';
-import 'dart:core';
 
 import '../../tiktok/domain/cubit/tiktok_cubit.dart'; // For using URIs
 
@@ -30,16 +32,14 @@ class _UpperControllerState extends State<UpperController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.green.shade100,
+      color: Colors.transparent,
       child: SwipingContainer(
         children: [
           BlocProvider(
             create: (_) => TikTokCubit(_repository),
             child: const TikTokScreen(),
           ),
-          Center(
-            child: Text('Screen 2'),
-          ),
+          CameraApp()
         ],
       ),
     );

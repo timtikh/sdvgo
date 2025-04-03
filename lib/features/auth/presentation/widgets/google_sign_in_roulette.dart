@@ -1,15 +1,16 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:sdvgo/core/presentation/dialog_window.dart';
 import 'package:sdvgo/core/presentation/menu_button.dart';
 
 class GoogleSignInRoulette extends StatefulWidget {
   final Function()? onLuckyButtonPressed;
 
   const GoogleSignInRoulette({
-    Key? key,
+    super.key,
     this.onLuckyButtonPressed,
-  }) : super(key: key);
+  });
 
   @override
   State<GoogleSignInRoulette> createState() => _GoogleSignInRouletteState();
@@ -25,7 +26,6 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette>
   late List<Animation<double>> _opacityAnimations;
   bool _isLoading = false;
   int _luckyButtonIndex = 0;
-  bool _gameStarted = false;
 
   // Random colors for each button
   late List<Color> _textColors;
@@ -146,9 +146,7 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette>
   }
 
   void _startAnimation() {
-    setState(() {
-      _gameStarted = true;
-    });
+    setState(() {});
     for (var controller in _controllers) {
       controller.repeat(reverse: true);
     }
@@ -162,28 +160,22 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette>
 
   void _showNoLuckDialog() {
     showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        backgroundColor: Colors.black,
-        title: Text(
-          // todo: add locales
-          'Чел, тебе не повезло, минус вайб(',
-          style: TextStyle(color: Colors.white),
-        ),
-        content: Text(
-          // todo: add locales
-
-          'Попробуй еще раз!',
-          style: TextStyle(color: Colors.white),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text('OK', style: TextStyle(color: Colors.purple)),
-          ),
-        ],
-      ),
-    );
+        context: context,
+        builder: (context) => DialogWindow.withButtons(
+              dialogText: 'Чел, тебе не повезло, минус вайб(',
+              buttonTexts: ['OK'],
+              buttonOnTaps: [
+                () {
+                  Navigator.pop(context);
+                }
+              ],
+              borderColor: Colors.green,
+              bgColor: Colors.yellow,
+              dialogTextColor: Colors.red,
+              buttonBgColor: Colors.redAccent,
+              buttonTextColor: Colors.white,
+              buttonBorderColor: Colors.green,
+            ));
   }
 
   @override
@@ -196,7 +188,7 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200, // Fixed height to ensure buttons are visible
       child: Stack(
         alignment: Alignment.center,

@@ -10,7 +10,7 @@ import '../widgets/animated_welcome_text.dart';
 import '../widgets/google_sign_in_roulette.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();

@@ -7,12 +7,12 @@ class AnimatedWelcomeText extends StatelessWidget {
   final double opacity;
 
   const AnimatedWelcomeText({
-    Key? key,
+    super.key,
     required this.text,
     required this.fadeAnimation,
     this.fontSize = 25,
     this.opacity = 0.7,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

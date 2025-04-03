@@ -21,7 +21,7 @@ class AuthState extends Equatable {
   const AuthState.unauthenticated()
       : this._(status: AuthStatus.unauthenticated);
 
-  AuthState.error(String message)
+  const AuthState.error(String message)
       : this._(status: AuthStatus.error, errorMessage: message);
 
   bool get isAuthenticated =>
