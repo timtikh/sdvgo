@@ -74,10 +74,7 @@ class DialogWindow extends StatelessWidget {
       color: Colors.transparent,
       child: Center(
         child: Container(
-          padding: const EdgeInsets.all(10.0),
-          height: buttons.length > 1
-              ? 250
-              : 200, // Adjust height based on number of buttons
+          padding: const EdgeInsets.all(15.0),
           width: 300,
           decoration: BoxDecoration(
             color: bgColor.withOpacity(0.93),
@@ -85,6 +82,7 @@ class DialogWindow extends StatelessWidget {
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Text(
                 textAlign: TextAlign.center,
