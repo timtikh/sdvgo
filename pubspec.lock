@@ -334,6 +334,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.8"
+  device_info_plus:
+    dependency: transitive
+    description:
+      name: device_info_plus
+      sha256: "306b78788d1bb569edb7c55d622953c2414ca12445b41c9117963e03afc5c513"
+      url: "https://pub.dev"
+    source: hosted
+    version: "11.3.3"
+  device_info_plus_platform_interface:
+    dependency: transitive
+    description:
+      name: device_info_plus_platform_interface
+      sha256: "0b04e02b30791224b31969eb1b50d723498f402971bff3630bca2ba839bd1ed2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.0.2"
   equatable:
     dependency: "direct main"
     description:
@@ -426,10 +442,10 @@ packages:
     dependency: "direct main"
     description:
       name: flame
-      sha256: "6a68254f6d6a298e14bb1671147d859e73bb505e05bf2ab4fb0bf663cb3b2696"
+      sha256: "7a39044eeea6906d8acc5d8292941fa081a4f2a37fd76dc5a2dbee8a29e28256"
       url: "https://pub.dev"
     source: hosted
-    version: "1.26.1"
+    version: "1.27.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -866,6 +882,38 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.27.7"
+  shake_gesture:
+    dependency: "direct main"
+    description:
+      name: shake_gesture
+      sha256: "17c360aeaddee2367752a30d5165e6a787625414358c695482176010e11842c3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0"
+  shake_gesture_android:
+    dependency: transitive
+    description:
+      name: shake_gesture_android
+      sha256: "8b6751bbeea8b357cab22d599308d087975297d0694599d83acc3f7e508f63ab"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.5"
+  shake_gesture_ios:
+    dependency: transitive
+    description:
+      name: shake_gesture_ios
+      sha256: dd7d5a89587f3696d2abe45d35c350e9986ebaa723538892e6da91d4c7e092d5
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.2"
+  shake_gesture_platform_interface:
+    dependency: transitive
+    description:
+      name: shake_gesture_platform_interface
+      sha256: c5e9adef94892c16e030aabd2c480620cac4dfc002f397309e796248a2a397cc
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   shelf:
     dependency: transitive
     description:
@@ -999,6 +1047,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  vibration:
+    dependency: "direct main"
+    description:
+      name: vibration
+      sha256: "804ee8f9628f31ee71fbe6137a2bc6206a64e101ec22cd9dd6d3a7dc0272591b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.3"
+  vibration_platform_interface:
+    dependency: transitive
+    description:
+      name: vibration_platform_interface
+      sha256: "03e9deaa4df48a1a6212e281bfee5f610d62e9247929dd2f26f4efd4fa5e225c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.0"
   video_player:
     dependency: "direct main"
     description:
@@ -1079,6 +1143,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
+  win32:
+    dependency: transitive
+    description:
+      name: win32
+      sha256: dc6ecaa00a7c708e5b4d10ee7bec8c270e9276dfcab1783f57e9962d7884305f
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.12.0"
+  win32_registry:
+    dependency: transitive
+    description:
+      name: win32_registry
+      sha256: "6f1b564492d0147b330dd794fee8f512cec4977957f310f9951b5f9d83618dae"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
   xdg_directories:
     dependency: transitive
     description:

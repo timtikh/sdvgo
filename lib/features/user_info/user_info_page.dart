@@ -17,7 +17,6 @@ class UserInfoPage extends StatefulWidget {
 }
 
 class _UserInfoPageState extends State<UserInfoPage> {
-
   void onMenuButtonTap() {
     Navigator.pushNamed(context, "/userinfo/achievements");
   }

@@ -3,13 +3,12 @@ import 'dart:math';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
-import 'package:flutter/material.dart';
 import 'package:flame/parallax.dart';
+import 'package:flutter/material.dart';
+import 'package:sdvgo/core/presentation/dialog_window.dart';
 import 'package:sdvgo/features/scooter_game/config/game_config.dart';
 import 'package:sdvgo/features/scooter_game/objects/enemy_object.dart';
 import 'package:sdvgo/features/scooter_game/objects/player_object.dart';
-
-import 'game_over_overlay.dart';
 
 class ScooterGameWidget extends StatelessWidget {
   const ScooterGameWidget({super.key, required this.addClicks});
@@ -20,7 +19,18 @@ class ScooterGameWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GameWidget<ScooterGame>.controlled(
       gameFactory: () => ScooterGame(addClicks: addClicks),
-      overlayBuilderMap: {'GameOver': (_, game) => GameOver(game: game)},
+      overlayBuilderMap: {
+        'GameOver': (_, game) => DialogWindow.withButtons(
+              dialogText: "Game Over\nYour score: ${game.points}",
+              buttonTexts: ["Play again"],
+              buttonOnTaps: [
+                game.restartingGame,
+              ],
+              buttonTextColor: Colors.yellow,
+              buttonBorderColor: Colors.red,
+              buttonBgColor: Colors.green,
+            )
+      },
     );
   }
 }
@@ -31,6 +41,7 @@ class ScooterGame extends FlameGame with PanDetector, HasCollisionDetection {
   final VoidCallback addClicks;
 
   late Player player;
+
   /// Number of stripes in game
   final stripes = List.generate(GameConfig.roadLinesCounter, (i) => i);
   int points = 0;
@@ -83,6 +94,7 @@ class ScooterGame extends FlameGame with PanDetector, HasCollisionDetection {
   }
 
   late Vector2 _startPosition;
+
   /// Value of how much user should swipe (in pixels) for triggering handler
   static const _swipeThreshold = 30.0;
 
