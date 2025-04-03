@@ -11,6 +11,7 @@
   "@settingsButton": {
     "description": "Кнопка настроек на главном экране"
   },
+  "boomerTranslator": "Переводчик с бумерского",
   "achievementsTitle": "Ачивки",
   "@achievementsTitle": {
     "description": ""
