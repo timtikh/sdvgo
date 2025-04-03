@@ -11,12 +11,14 @@ class TikTokUploader {
     try {
       await Firebase.initializeApp();
 
-      final String jsonString = await rootBundle.loadString('assets/tiktoks.json');
-      final Map<String, dynamic> jsonData = json.decode(jsonString) as Map<String, dynamic>;
+      final String jsonString =
+          await rootBundle.loadString('assets/tiktoks.json');
+      final Map<String, dynamic> jsonData =
+          json.decode(jsonString) as Map<String, dynamic>;
       final List<dynamic> tiktoks = jsonData['tiktoks'] as List<dynamic>;
 
       final CollectionReference tiktokCollection =
-      FirebaseFirestore.instance.collection('tiktok_collection_1');
+          FirebaseFirestore.instance.collection('tiktok_collection_1');
 
       WriteBatch batch = FirebaseFirestore.instance.batch();
 
@@ -27,7 +29,9 @@ class TikTokUploader {
         batch.set(docRef, {
           ...item,
           'timestamp': FieldValue.serverTimestamp(),
-          'likesCount': int.tryParse(item['likes'].toString().replaceAll(RegExp(r'[^0-9]'), '')) ?? 0,
+          'likesCount': int.tryParse(
+                  item['likes'].toString().replaceAll(RegExp(r'[^0-9]'), '')) ??
+              0,
         });
       }
 

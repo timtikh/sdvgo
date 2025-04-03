@@ -8,6 +8,7 @@ class TikTokRepositoryImpl implements TikTokRepository {
 
   TikTokRepositoryImpl(this._firestore);
 
+  @override
   Future<List<Video>> getVideos({
     int limit = 5,
     DocumentSnapshot? startAfter,
@@ -40,7 +41,8 @@ class TikTokRepositoryImpl implements TikTokRepository {
   @override
   Future<DocumentSnapshot?> getLastDocument(String videoId) async {
     try {
-      final doc = await _firestore.collection(_collectionName).doc(videoId).get();
+      final doc =
+          await _firestore.collection(_collectionName).doc(videoId).get();
       return doc.exists ? doc : null;
     } catch (e) {
       print('Firestore error: $e');

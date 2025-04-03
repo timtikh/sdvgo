@@ -6,9 +6,8 @@ import '../domain/cubit/tiktok_cubit.dart';
 import '../domain/cubit/tiktok_state.dart';
 import 'widgets/zoomable_video_player.dart';
 
-
 class TikTokScreen extends StatefulWidget {
-  const TikTokScreen({Key? key}) : super(key: key);
+  const TikTokScreen({super.key});
 
   @override
   _TikTokScreenState createState() => _TikTokScreenState();
@@ -91,8 +90,8 @@ class _TikTokScreenState extends State<TikTokScreen> {
             itemCount: state.videos.length + (state.hasMore ? 1 : 0),
             controller: _pageController,
             itemBuilder: (context, index) {
-
-              final controller = context.read<TikTokCubit>().getController(index);
+              final controller =
+                  context.read<TikTokCubit>().getController(index);
               if (controller == null || !controller.value.isInitialized) {
                 return const Center(child: CircularProgressIndicator());
               }

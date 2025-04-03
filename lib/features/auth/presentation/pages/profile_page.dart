@@ -5,7 +5,7 @@ import 'package:sdvgo/features/auth/domain/cubits/auth_cubit.dart';
 import 'package:yx_scope_flutter/yx_scope_flutter.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {

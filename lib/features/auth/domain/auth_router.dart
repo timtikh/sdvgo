@@ -7,7 +7,7 @@ import 'package:sdvgo/features/home/home_page.dart';
 import 'package:yx_scope_flutter/yx_scope_flutter.dart';
 
 class AuthRouter extends StatelessWidget {
-  const AuthRouter({Key? key}) : super(key: key);
+  const AuthRouter({super.key});
 
   @override
   Widget build(BuildContext context) {

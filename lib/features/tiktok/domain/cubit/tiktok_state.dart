@@ -47,5 +47,14 @@ class TikTokState extends Equatable {
   }
 
   @override
-  List<Object?> get props => [status, videos, error, hasMore, isLoadingMore, currentIndex, preloadedVideo, preloadedVideos];
-} 
+  List<Object?> get props => [
+        status,
+        videos,
+        error,
+        hasMore,
+        isLoadingMore,
+        currentIndex,
+        preloadedVideo,
+        preloadedVideos
+      ];
+}

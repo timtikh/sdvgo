@@ -7,11 +7,11 @@ class ZoomableVideoPlayer extends StatelessWidget {
   final double zoomScale;
 
   const ZoomableVideoPlayer({
-    Key? key,
+    super.key,
     required this.controller,
     this.isFullScreen = false,
     this.zoomScale = 1,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
