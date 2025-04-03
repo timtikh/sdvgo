@@ -91,9 +91,6 @@ class _TikTokScreenState extends State<TikTokScreen> {
             itemCount: state.videos.length + (state.hasMore ? 1 : 0),
             controller: _pageController,
             itemBuilder: (context, index) {
-              if (index >= state.videos.length) {
-                return const Center(child: CircularProgressIndicator());
-              }
 
               final controller = context.read<TikTokCubit>().getController(index);
               if (controller == null || !controller.value.isInitialized) {
