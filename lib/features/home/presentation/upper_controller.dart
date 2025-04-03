@@ -7,8 +7,8 @@ import 'package:sdvgo/core/presentation/swiping_container.dart';
 import 'package:sdvgo/features/camera/presentation/camera_app.dart';
 import 'package:sdvgo/features/tiktok/data/repositories/tiktok_repository_impl.dart';
 import 'package:sdvgo/features/tiktok/presentation/tiktok_screen.dart';
-import '../../tiktok/domain/cubit/tiktok_cubit.dart'; // For using URIs
 
+import '../../tiktok/domain/cubit/tiktok_cubit.dart'; // For using URIs
 
 // TODO: он типо должен хэндлить логику переключения между списком вижетов
 // TODO:  а в идеале вообще быть унаследован от одного и того же типа
