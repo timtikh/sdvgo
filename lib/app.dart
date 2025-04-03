@@ -36,6 +36,7 @@ class _MyAppState extends State<MyApp> {
     return ScopeProvider(
       holder: _appScopeHolder,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'SDVGO',
         supportedLocales: S.supportedLocales,
         localizationsDelegates: S.localizationDelegates,
