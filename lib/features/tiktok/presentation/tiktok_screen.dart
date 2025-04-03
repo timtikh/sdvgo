@@ -8,7 +8,7 @@ import 'widgets/zoomable_video_player.dart';
 
 
 class TikTokScreen extends StatefulWidget {
-  const TikTokScreen({Key? key}) : super(key: key);
+  const TikTokScreen({super.key});
 
   @override
   _TikTokScreenState createState() => _TikTokScreenState();

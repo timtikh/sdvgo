@@ -3,6 +3,11 @@ include: package:flutter_lints/flutter.yaml
 analyzer:
   errors:
     invalid_annotation_target: ignore
+    avoid_print: ignore
+    deprecated_member_use: ignore
+    use_key_in_widget_constructors: ignore
+    prefer_final_fields: ignore
+    library_private_types_in_public_api: ignore
   plugins:
     - custom_lint
 

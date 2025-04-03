@@ -5,10 +5,10 @@ class TrashBackground extends StatelessWidget {
   final List<Color> gradientColors;
 
   const TrashBackground({
-    Key? key,
+    super.key,
     required this.child,
     this.gradientColors = const [],
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

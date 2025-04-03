@@ -8,13 +8,13 @@ class GoogleSignInButton extends StatelessWidget {
   final double? height;
 
   const GoogleSignInButton({
-    Key? key,
+    super.key,
     this.isLoading = false,
     this.onPressed,
     this.isTrashDesign = false,
     this.width,
     this.height,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

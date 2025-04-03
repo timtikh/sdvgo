@@ -8,6 +8,7 @@ class TikTokRepositoryImpl implements TikTokRepository {
 
   TikTokRepositoryImpl(this._firestore);
 
+  @override
   Future<List<Video>> getVideos({
     int limit = 5,
     DocumentSnapshot? startAfter,

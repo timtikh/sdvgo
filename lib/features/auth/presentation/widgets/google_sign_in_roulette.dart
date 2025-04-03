@@ -8,9 +8,9 @@ class GoogleSignInRoulette extends StatefulWidget {
   final Function()? onLuckyButtonPressed;
 
   const GoogleSignInRoulette({
-    Key? key,
+    super.key,
     this.onLuckyButtonPressed,
-  }) : super(key: key);
+  });
 
   @override
   State<GoogleSignInRoulette> createState() => _GoogleSignInRouletteState();
@@ -26,7 +26,6 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette>
   late List<Animation<double>> _opacityAnimations;
   bool _isLoading = false;
   int _luckyButtonIndex = 0;
-  bool _gameStarted = false;
 
   // Random colors for each button
   late List<Color> _textColors;
@@ -148,7 +147,6 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette>
 
   void _startAnimation() {
     setState(() {
-      _gameStarted = true;
     });
     for (var controller in _controllers) {
       controller.repeat(reverse: true);
@@ -191,7 +189,7 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200, // Fixed height to ensure buttons are visible
       child: Stack(
         alignment: Alignment.center,
