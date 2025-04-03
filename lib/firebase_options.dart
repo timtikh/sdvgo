@@ -63,9 +63,10 @@ class DefaultFirebaseOptions {
     messagingSenderId: '855992071312',
     projectId: 'sdvgo-8f8e5',
     storageBucket: 'sdvgo-8f8e5.firebasestorage.app',
-    androidClientId: '855992071312-av5a95j3kr6orp1mikmju9n74r3ui1is.apps.googleusercontent.com',
-    iosClientId: '855992071312-12f9a9fadbkl2vajhj08ss8bsoeevf0d.apps.googleusercontent.com',
+    androidClientId:
+        '855992071312-av5a95j3kr6orp1mikmju9n74r3ui1is.apps.googleusercontent.com',
+    iosClientId:
+        '855992071312-12f9a9fadbkl2vajhj08ss8bsoeevf0d.apps.googleusercontent.com',
     iosBundleId: 'com.sirius.yandex.sdvgo',
   );
-
 }

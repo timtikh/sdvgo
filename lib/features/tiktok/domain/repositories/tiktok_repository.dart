@@ -11,4 +11,4 @@ abstract class TikTokRepository {
   Future<void> cacheVideos(List<Video> videos);
   Future<List<Video>> getCachedVideos({int limit = 5});
   Future<void> clearCache();
-} 
+}

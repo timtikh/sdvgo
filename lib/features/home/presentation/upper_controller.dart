@@ -39,7 +39,6 @@ class _UpperControllerState extends State<UpperController> {
             create: (_) => TikTokCubit(_repository),
             child: const TikTokScreen(),
           ),
-
           CameraApp()
         ],
       ),

@@ -146,8 +146,7 @@ class _GoogleSignInRouletteState extends State<GoogleSignInRoulette>
   }
 
   void _startAnimation() {
-    setState(() {
-    });
+    setState(() {});
     for (var controller in _controllers) {
       controller.repeat(reverse: true);
     }

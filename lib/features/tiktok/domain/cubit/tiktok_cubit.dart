@@ -17,13 +17,14 @@ class TikTokCubit extends Cubit<TikTokState> {
   Timer? _cleanupTimer;
 
   TikTokCubit(this._repository) : super(const TikTokState()) {
-    _cleanupTimer = Timer.periodic(const Duration(seconds: 30), (_) => _cleanupUnusedControllers());
+    _cleanupTimer = Timer.periodic(
+        const Duration(seconds: 30), (_) => _cleanupUnusedControllers());
   }
 
   void _cleanupUnusedControllers() {
     final currentIndex = state.currentIndex;
     final videos = state.videos;
-    
+
     final keepIndices = {
       currentIndex,
       if (currentIndex > 0) currentIndex - 1,
@@ -109,7 +110,8 @@ class TikTokCubit extends Cubit<TikTokState> {
       ));
 
       if (moreVideos.isNotEmpty) {
-        await _initializeController(state.videos.length - moreVideos.length, moreVideos[0], false);
+        await _initializeController(
+            state.videos.length - moreVideos.length, moreVideos[0], false);
       }
     } catch (e) {
       emit(state.copyWith(
@@ -119,19 +121,20 @@ class TikTokCubit extends Cubit<TikTokState> {
     }
   }
 
-  Future<void> _initializeController(int index, Video video, bool autoPlay) async {
+  Future<void> _initializeController(
+      int index, Video video, bool autoPlay) async {
     if (_activeControllers.containsKey(index)) return;
 
     final controller = VideoPlayerController.networkUrl(video.uri);
     await controller.initialize();
     controller.setLooping(true);
-    
+
     _activeControllers[index] = controller;
-    
+
     if (autoPlay) {
       await controller.play();
     }
-    
+
     emit(state.copyWith());
   }
 
@@ -164,7 +167,7 @@ class TikTokCubit extends Cubit<TikTokState> {
 
     try {
       final videos = state.videos;
-      
+
       for (int i = 1; i <= 2; i++) {
         final nextIndex = currentIndex + i;
         if (nextIndex < videos.length) {
