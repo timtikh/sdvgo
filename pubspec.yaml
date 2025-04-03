@@ -35,12 +35,21 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.3
   custom_lint: ^0.5.3
   yx_scope_linter: ^0.1.2
   flutter_lints: ^5.0.0
   build_runner: ^2.4.15
   json_serializable: ^6.9.4
   freezed: ^3.0.0-0.0.dev
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/app_ico.png"
+  adaptive_icon_background: "assets/icon/russia_bg.png"
+  adaptive_icon_foreground: "assets/icon/trans_ico.png"
+  min_sdk_android: 21
 
 dependency_overrides:
   analyzer: ^6.5.0
