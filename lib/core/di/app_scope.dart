@@ -1,8 +1,16 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:sdvgo/core/domain/user_statistics_cubit.dart';
 import 'package:sdvgo/features/auth/data/auth_repository_impl.dart';
 import 'package:sdvgo/features/auth/domain/cubits/auth_cubit.dart';
 import 'package:sdvgo/features/auth/domain/repositories/auth_repository.dart';
+import 'package:sdvgo/features/tiktok/data/repositories/tiktok_repository_impl.dart';
+import 'package:sdvgo/features/tiktok/domain/cubit/tiktok_cubit.dart';
+import 'package:sdvgo/features/tiktok/domain/repositories/controller_repository.dart';
+import 'package:sdvgo/features/tiktok/domain/repositories/tiktok_repository.dart';
 import 'package:yx_scope/yx_scope.dart';
+
+import '../../features/tiktok/presentation/controller_repository_impl.dart';
 
 class AppScopeContainer extends ScopeContainer {
   // TODO: надо чето сделать с тем что я нулями просто инициализирую значения
@@ -14,6 +22,18 @@ class AppScopeContainer extends ScopeContainer {
 
   late final authCubitDep =
       dep(() => AuthCubit(authRepository: authRepositoryDep.get));
+
+  /// tiktok section
+  late final tiktokRepositoryDep =
+    dep<TikTokRepository>(() => TikTokRepositoryImpl(FirebaseFirestore.instance));
+
+  late final tiktokCubitDep =
+    dep(() => TikTokCubit(tiktokRepositoryDep.get));
+
+  /*late final tiktokControllerRepositoryDep =
+    dep<TiktokControllerRepository>(() => TiktokControllerRepositoryImpl(tiktokCubitDep.get));
+*/
+  /// tiktok section end
 }
 
 class AppScopeHolder extends ScopeHolder<AppScopeContainer> {
