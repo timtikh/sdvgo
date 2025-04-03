@@ -3,9 +3,9 @@ import 'package:sdvgo/core/presentation/dialog_window.dart';
 import 'package:sdvgo/core/presentation/gradient_background.dart';
 import 'package:sdvgo/features/home/presentation/clicker_button.dart';
 import 'package:sdvgo/features/home/presentation/draggable_bottom_sheet.dart';
-import 'package:shake_gesture/shake_gesture.dart';
 import 'package:sdvgo/features/home/presentation/lower_controller.dart';
 import 'package:sdvgo/features/home/presentation/upper_controller.dart';
+import 'package:shake_gesture/shake_gesture.dart';
 
 import 'presentation/control_bar.dart';
 

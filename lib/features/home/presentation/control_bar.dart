@@ -7,28 +7,12 @@ class ControlBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          ControlBarButton(
-            title: S.of(context).hqdButton,
-            onTap: () {
-              Navigator.pushNamed(context, '/profile');
-            },
-          ),
-          // lets try
-          // ignore: sized_box_for_whitespace
-          SizedBox(
-            width: 100,
-          ),
-          ControlBarButton(
-            title: S.of(context).settingsButton,
-            onTap: () {
-              Navigator.pushNamed(context, '/userinfo');
-            },
-          ),
-        ],
+    return Container(
+      height: 50,
+      width: double.infinity,
+      child: Image.asset(
+        'assets/images/ad.png',
+        fit: BoxFit.fill,
       ),
     );
   }
