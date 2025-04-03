@@ -42,6 +42,7 @@ dev_dependencies:
   build_runner: ^2.4.15
   json_serializable: ^6.9.4
   freezed: ^3.0.0-0.0.dev
+  mocktail: ^1.0.4
 
 flutter_launcher_icons:
   android: "launcher_icon"
