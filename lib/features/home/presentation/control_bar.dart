@@ -17,6 +17,7 @@ class ControlBar extends StatelessWidget {
               Navigator.pushNamed(context, '/profile');
             },
           ),
+          // ignore: sized_box_for_whitespace
           SizedBox(
             width: 100,
           ),

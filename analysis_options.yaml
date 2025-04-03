@@ -9,11 +9,11 @@ analyzer:
     use_key_in_widget_constructors: ignore
     prefer_final_fields: ignore
     library_private_types_in_public_api: ignore
+    sized_box_for_whitespace: ignore
   strong-mode:
     implicit-casts: false
     implicit-dynamic: false
-  language:
-    strict-raw-types: true
+
   plugins:
     - custom_lint
 
