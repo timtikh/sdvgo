@@ -22,7 +22,7 @@ jobs:
         with:
           channel: stable
       - run: flutter analyze --no-fatal-infos --no-fatal-infos .
-      - run: dart format --set-if-changed .
+      - run: dart format --set-exit-if-changed .
 
   flutter-test:
       runs-on: ubuntu-latest
