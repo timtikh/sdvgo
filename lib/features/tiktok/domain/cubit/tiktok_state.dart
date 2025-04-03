@@ -9,6 +9,7 @@ class TikTokState extends Equatable {
   final String? error;
   final bool hasMore;
   final bool isLoadingMore;
+  final int currentIndex;
   final Video? preloadedVideo;
   final List<Video> preloadedVideos;
 
@@ -18,6 +19,7 @@ class TikTokState extends Equatable {
     this.error,
     this.hasMore = true,
     this.isLoadingMore = false,
+    this.currentIndex = 0,
     this.preloadedVideo,
     this.preloadedVideos = const [],
   });
@@ -28,6 +30,7 @@ class TikTokState extends Equatable {
     String? error,
     bool? hasMore,
     bool? isLoadingMore,
+    int? currentIndex,
     Video? preloadedVideo,
     List<Video>? preloadedVideos,
   }) {
@@ -37,11 +40,12 @@ class TikTokState extends Equatable {
       error: error ?? this.error,
       hasMore: hasMore ?? this.hasMore,
       isLoadingMore: isLoadingMore ?? this.isLoadingMore,
+      currentIndex: currentIndex ?? this.currentIndex,
       preloadedVideo: preloadedVideo ?? this.preloadedVideo,
       preloadedVideos: preloadedVideos ?? this.preloadedVideos,
     );
   }
 
   @override
-  List<Object?> get props => [status, videos, error, hasMore, isLoadingMore, preloadedVideo, preloadedVideos];
+  List<Object?> get props => [status, videos, error, hasMore, isLoadingMore, currentIndex, preloadedVideo, preloadedVideos];
 } 
