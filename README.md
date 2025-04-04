@@ -27,30 +27,27 @@ Flutter-приложение SDVGO aka super-app для зумеров. Мы р�
 ## 🖼️ Скриншоты
 
 ### Главный экран
-![Главный экран](screenshots/main_screen.jpg)
+<img src="screenshots/main_screen.jpg" width="300" alt="Главный экран">
 
 ### Главный экран + вэйп
-![Главный экран + вэйп](screenshots/main_screen_vape.jpg)
+<img src="screenshots/main_screen_vape.jpg" width="300" alt="Главный экран + вэйп">
 
 ### Действие вэйпа
-![Действие вэйпа](screenshots/main_screen_vape_action.jpg)
+<img src="screenshots/main_screen_vape_action.jpg" width="300" alt="Действие вэйпа">
 
 ### Диалог тряски
-![Диалог тряски](screenshots/main_screen_shake_dialog.jpg)
+<img src="screenshots/main_screen_shake_dialog.jpg" width="300" alt="Диалог тряски">
 
 ### Достижения
-![Достижения](screenshots/achievements_screen.jpg)
+<img src="screenshots/achievements_screen.jpg" width="300" alt="Достижения">
 
 ### Настройки
-![Настройки](screenshots/settings_screen.jpg)
+<img src="screenshots/settings_screen.jpg" width="300" alt="Настройки">
 
 ## 🎥 Видео демонстрации
 
 ### Демонстрация основных функций
-<video width="100%" controls>
-  <source src="screenshots/videos/main_demo.mp4" type="video/mp4">
-  Ваш браузер не поддерживает видео тег.
-</video>
+<img src="screenshots/videos/main_demo.gif" width="600" alt="Демонстрация SDVGO">
 
 ## 🏗 Архитектура
 
