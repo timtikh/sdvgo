@@ -2,15 +2,15 @@
 
 ## 📑 Содержание
 
-- [🎯 Обзор проекта](#обзор-проекта)
-- [🖼️ Скриншоты](#скриншоты)
-- [🎥 Видео демонстрации](#видео-демонстрации)
-- [🏗 Архитектура](#архитектура)
-- [📱 Версии и требования](#версии-и-требования)
-- [🌐 Сетевые сервисы и API](#сетевые-сервисы-и-api)
-- [🛠 Технологии и инструменты](#технологии-и-инструменты)
-- [⚙️ Установка и настройка](#установка-и-настройка)
-- [🔥 Firebase настройка](#firebase-настройка)
+- [🎯 Обзор проекта](#🎯-обзор-проекта)
+- [🖼️ Скриншоты](#🖼️-скриншоты)
+- [🎥 Видео демонстрации](#🎥-видео-демонстрации)
+- [🏗 Архитектура](#🏗-архитектура)
+- [📱 Версии и требования](#📱-версии-и-требования)
+- [🌐 Сетевые сервисы и API](#🌐-сетевые-сервисы-и-api)
+- [🛠 Технологии и инструменты](#🛠-технологии-и-инструменты)
+- [⚙️ Установка и настройка](#⚙️-установка-и-настройка)
+- [🔥 Firebase настройка](#🔥-firebase-настройка)
 
 ## 🎯 Обзор проекта
 
@@ -27,27 +27,27 @@ Flutter-приложение SDVGO aka super-app для зумеров. Мы р�
 ## 🖼️ Скриншоты
 
 ### Главный экран
-<img src="screenshots/main_screen.jpg" width="300" alt="Главный экран">
+<img src="screenshots/main_screen.jpg" width="200" alt="Главный экран">
 
 ### Главный экран + вэйп
-<img src="screenshots/main_screen_vape.jpg" width="300" alt="Главный экран + вэйп">
+<img src="screenshots/main_screen_vape.jpg" width="200" alt="Главный экран + вэйп">
 
 ### Действие вэйпа
-<img src="screenshots/main_screen_vape_action.jpg" width="300" alt="Действие вэйпа">
+<img src="screenshots/main_screen_vape_action.jpg" width="200" alt="Действие вэйпа">
 
 ### Диалог тряски
-<img src="screenshots/main_screen_shake_dialog.jpg" width="300" alt="Диалог тряски">
+<img src="screenshots/main_screen_shake_dialog.jpg" width="200" alt="Диалог тряски">
 
 ### Достижения
-<img src="screenshots/achievements_screen.jpg" width="300" alt="Достижения">
+<img src="screenshots/achievements_screen.jpg" width="200" alt="Достижения">
 
 ### Настройки
-<img src="screenshots/settings_screen.jpg" width="300" alt="Настройки">
+<img src="screenshots/settings_screen.jpg" width="200" alt="Настройки">
 
 ## 🎥 Видео демонстрации
 
 ### Демонстрация основных функций
-<img src="screenshots/videos/main_demo.gif" width="600" alt="Демонстрация SDVGO">
+<img src="screenshots/videos/main_demo-1.gif" width="200" alt="Демонстрация SDVGO">
 
 ## 🏗 Архитектура
 
